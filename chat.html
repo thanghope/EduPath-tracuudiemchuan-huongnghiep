@@ -94,7 +94,7 @@
     </main>
 
     <script src="js/config.js"></script>
-    <script src="js/config.local.js" onerror="console.log('Running in production mode')"></script>
+    <script src="js/config.local.example.js" onerror="console.log('Running in production mode')"></script>
     <script src="js/chat.js"></script>
     <script>
         // Auto-resize textarea
@@ -113,11 +113,11 @@
         });
 
         // Global function for quick actions
-        function askQuestion(question) {
-            if (window.eduPathChat && !window.eduPathChat.isLoading) {
-                window.eduPathChat.sendMessage(question);
-            }
-        }
+        // function askQuestion(question) {
+        //     if (window.eduPathChat && !window.eduPathChat.isLoading) {
+        //         window.eduPathChat.sendMessage(question);
+        //     }
+        // }
     </script>
 </body>
 
