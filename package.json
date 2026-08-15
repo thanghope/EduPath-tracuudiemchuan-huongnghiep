@@ -1,5 +1,17 @@
 {
+  "name": "do_nhi",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "firebase": "^12.17.1"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
   }
 }
