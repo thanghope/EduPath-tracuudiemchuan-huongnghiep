@@ -1,0 +1,67 @@
+{
+    "A00": {
+        "name": "Khối A00",
+        "subjects": ["Toán", "Vật lý", "Hóa học"],
+        "subject_codes": ["toan", "ly", "hoa"]
+    },
+    "A01": {
+        "name": "Khối A01",
+        "subjects": ["Toán", "Vật lý", "Tiếng Anh"],
+        "subject_codes": ["toan", "ly", "anh"]
+    },
+    "A02": {
+        "name": "Khối A02",
+        "subjects": ["Toán", "Vật lý", "Sinh học"],
+        "subject_codes": ["toan", "ly", "sinh"]
+    },
+    "B00": {
+        "name": "Khối B00",
+        "subjects": ["Toán", "Hóa học", "Sinh học"],
+        "subject_codes": ["toan", "hoa", "sinh"]
+    },
+    "B08": {
+        "name": "Khối B08",
+        "subjects": ["Toán", "Sinh học", "Tiếng Anh"],
+        "subject_codes": ["toan", "sinh", "anh"]
+    },
+    "C00": {
+        "name": "Khối C00",
+        "subjects": ["Ngữ văn", "Lịch sử", "Địa lý"],
+        "subject_codes": ["van", "su", "dia"]
+    },
+    "C01": {
+        "name": "Khối C01",
+        "subjects": ["Ngữ văn", "Toán", "Vật lý"],
+        "subject_codes": ["van", "toan", "ly"]
+    },
+    "C02": {
+        "name": "Khối C02",
+        "subjects": ["Ngữ văn", "Toán", "Hóa học"],
+        "subject_codes": ["van", "toan", "hoa"]
+    },
+    "D01": {
+        "name": "Khối D01",
+        "subjects": ["Toán", "Ngữ văn", "Tiếng Anh"],
+        "subject_codes": ["toan", "van", "anh"]
+    },
+    "D07": {
+        "name": "Khối D07",
+        "subjects": ["Toán", "Hóa học", "Tiếng Anh"],
+        "subject_codes": ["toan", "hoa", "anh"]
+    },
+    "D08": {
+        "name": "Khối D08",
+        "subjects": ["Toán", "Sinh học", "Tiếng Anh"],
+        "subject_codes": ["toan", "sinh", "anh"]
+    },
+    "D09": {
+        "name": "Khối D09",
+        "subjects": ["Toán", "Lịch sử", "Tiếng Anh"],
+        "subject_codes": ["toan", "su", "anh"]
+    },
+    "D10": {
+        "name": "Khối D10",
+        "subjects": ["Toán", "Địa lý", "Tiếng Anh"],
+        "subject_codes": ["toan", "dia", "anh"]
+    }
+}

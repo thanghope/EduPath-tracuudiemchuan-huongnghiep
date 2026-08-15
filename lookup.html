@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tra cứu điểm chuẩn đại học 2025 từ 80+ trường hàng đầu Việt Nam">
+    <title>Tra cứu Điểm chuẩn Đại học - EduPath</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: #0f172a;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ffffff;
+        }
+
+        .logo-text {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">Edu<span>Path</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                <li><a href="lookup.html" class="nav-link active">Điểm chuẩn</a></li>
+                <li><a href="analysis.html" class="nav-link">Phân tích</a></li>
+                <li><a href="personalize.html" class="nav-link">Cá nhân hóa</a></li>
+                <li><a href="career.html" class="nav-link">Hướng nghiệp</a></li>
+            </ul>
+            <a href="chat.html" class="btn btn-gold">
+                <i class="fa-solid fa-robot"></i> Hỏi đáp AI
+            </a>
+        </div>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <!-- Sidebar Navigation -->
+            <div class="sidebar-nav">
+                <a href="#" class="sidebar-nav-item active">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    <span>Tra cứu điểm</span>
+                </a>
+                <a href="#" class="sidebar-nav-item" style="opacity: 0.5; cursor: not-allowed;">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Phân tích xu hướng</span>
+                    <span class="badge badge-soon" style="margin-left: auto; font-size: 0.65rem;">Sắp có</span>
+                </a>
+                <a href="#" class="sidebar-nav-item" style="opacity: 0.5; cursor: not-allowed;">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <span>So sánh trường</span>
+                    <span class="badge badge-premium" style="margin-left: auto; font-size: 0.65rem;">Premium</span>
+                </a>
+            </div>
+
+            <!-- Search Filter -->
+            <div class="sidebar-section">
+                <div class="sidebar-header">
+                    <i class="fa-solid fa-filter"></i> Bộ lọc tìm kiếm
+                </div>
+                <div class="filter-item">
+                    <label><i class="fa-solid fa-search"></i> Tìm kiếm</label>
+                    <input type="text" id="school-search" class="input" placeholder="Tên trường, mã trường...">
+                </div>
+                <div class="filter-item">
+                    <label><i class="fa-solid fa-calendar"></i> Năm</label>
+                    <select id="year-filter" class="input">
+                        <option value="">Tất cả năm</option>
+                        <option value="2025" selected>2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label><i class="fa-solid fa-layer-group"></i> Khối thi</label>
+                    <select id="block-filter" class="input">
+                        <option value="">Tất cả khối</option>
+                        <optgroup label="Khối A">
+                            <option value="A00">A00 (Toán, Lý, Hóa)</option>
+                            <option value="A01">A01 (Toán, Lý, Anh)</option>
+                            <option value="A02">A02 (Toán, Lý, Sinh)</option>
+                        </optgroup>
+                        <optgroup label="Khối B">
+                            <option value="B00">B00 (Toán, Hóa, Sinh)</option>
+                            <option value="B03">B03 (Toán, Sinh, Văn)</option>
+                            <option value="B08">B08 (Toán, Sinh, Anh)</option>
+                        </optgroup>
+                        <optgroup label="Khối C">
+                            <option value="C00">C00 (Văn, Sử, Địa)</option>
+                            <option value="C01">C01 (Văn, Toán, Lý)</option>
+                            <option value="C02">C02 (Văn, Toán, Hóa)</option>
+                        </optgroup>
+                        <optgroup label="Khối D">
+                            <option value="D01">D01 (Toán, Văn, Anh)</option>
+                            <option value="D04">D04 (Toán, Văn, Trung)</option>
+                            <option value="D07">D07 (Toán, Hóa, Anh)</option>
+                            <option value="D14">D14 (Văn, Sử, Anh)</option>
+                            <option value="D15">D15 (Văn, Địa, Anh)</option>
+                        </optgroup>
+                        <optgroup label="Khối Năng khiếu">
+                            <option value="H00">H00 (Văn, Vẽ MT, Vẽ HH)</option>
+                            <option value="N00">N00 (Âm nhạc, Năng khiếu)</option>
+                            <option value="T00">T00 (Toán, Sinh, TDTT)</option>
+                            <option value="V00">V00 (Toán, Lý, Vẽ MT)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label><i class="fa-solid fa-building-columns"></i> Loại trường</label>
+                    <select id="type-filter" class="input">
+                        <option value="">Tất cả</option>
+                        <option value="Công lập">Công lập</option>
+                        <option value="Tư thục">Tư thục</option>
+                        <option value="Quân đội">Quân đội</option>
+                        <option value="Công an">Công an</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <button class="btn-dash btn-dash-primary" onclick="searchScores()" style="width: 100%;">
+                        <i class="fa-solid fa-search"></i> Tìm kiếm
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="sidebar-section">
+                <div class="sidebar-header">
+                    <i class="fa-solid fa-database"></i> Thống kê hệ thống
+                </div>
+                <div style="padding: 0 12px; color: #64748b; font-size: 0.8rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span>Trường đại học</span>
+                        <span style="color: #60a5fa; font-weight: 600;" id="total-universities">--</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span>Ngành đào tạo</span>
+                        <span style="color: #60a5fa; font-weight: 600;" id="total-majors">--</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Dữ liệu cập nhật</span>
+                        <span style="color: #4ade80; font-weight: 600;">2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status -->
+            <div style="padding: 12px; margin-top: auto;">
+                <div style="display: flex; align-items: center; color: #64748b; font-size: 0.75rem;">
+                    <span class="status-dot online"></span>
+                    <span>Hệ thống hoạt động bình thường</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Stats Row -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-card-icon blue">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="stat-card-value" id="stat-highest">--</div>
+                    <div class="stat-card-label">Điểm cao nhất 2025</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon green">
+                        <i class="fa-solid fa-chart-bar"></i>
+                    </div>
+                    <div class="stat-card-value" id="stat-avg">--</div>
+                    <div class="stat-card-label">Điểm trung bình</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon purple">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <div class="stat-card-value" id="stat-increase">--</div>
+                    <div class="stat-card-label">Ngành tăng điểm</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon orange">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <div class="stat-card-value" id="stat-hot">--</div>
+                    <div class="stat-card-label">Ngành hot nhất</div>
+                </div>
+            </div>
+
+            <!-- Chart Panel (Placeholder for upsell) -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Biểu đồ xu hướng điểm chuẩn
+                        <span class="badge badge-soon">Sắp ra mắt</span>
+                    </div>
+                    <div class="panel-actions">
+                        <button class="btn-dash btn-dash-ghost btn-disabled" disabled>
+                            <i class="fa-solid fa-download"></i> Export
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="chart-placeholder">
+                        <i class="fa-solid fa-chart-area"></i>
+                        <span>Tính năng biểu đồ đang được phát triển</span>
+                        <span style="font-size: 0.75rem; margin-top: 8px;">Liên hệ để nâng cấp Premium</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Filters -->
+            <div class="quick-filters">
+                <span style="color: #64748b; font-size: 0.8rem; margin-right: 8px;">Lọc nhanh:</span>
+                <button class="filter-pill active" onclick="filterQuick('')">Tất cả</button>
+                <button class="filter-pill" onclick="filterQuick('A00')">A00</button>
+                <button class="filter-pill" onclick="filterQuick('A01')">A01</button>
+                <button class="filter-pill" onclick="filterQuick('B00')">B00</button>
+                <button class="filter-pill" onclick="filterQuick('C00')">C00</button>
+                <button class="filter-pill" onclick="filterQuick('D01')">D01</button>
+                <button class="filter-pill" onclick="filterQuick('D07')">D07</button>
+                <button class="filter-pill" onclick="filterQuick('D14')">D14</button>
+                <button class="filter-pill" onclick="filterQuick('H00')">H00</button>
+                <button class="filter-pill" onclick="filterQuick('N00')">N00</button>
+                <button class="filter-pill" onclick="filterQuick('T00')">T00</button>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fa-solid fa-table"></i>
+                        Bảng điểm chuẩn
+                        <span id="results-count" style="font-weight: 400; color: #64748b; font-size: 0.85rem;">Đang
+                            tải...</span>
+                    </div>
+                    <div class="panel-actions">
+                        <button class="btn-dash btn-dash-ghost btn-disabled" disabled title="Premium Feature">
+                            <i class="fa-solid fa-file-pdf"></i> PDF
+                        </button>
+                        <button class="btn-dash btn-dash-ghost btn-disabled" disabled title="Premium Feature">
+                            <i class="fa-solid fa-file-excel"></i> Excel
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding: 0;">
+                    <!-- Loading -->
+                    <div class="loading" id="loading">
+                        <i class="fa-solid fa-spinner" style="color: #3b82f6;"></i>
+                        <p style="color: #94a3b8;">Đang tải dữ liệu...</p>
+                    </div>
+
+                    <!-- Results Container -->
+                    <div id="results-container"></div>
+                </div>
+            </div>
+
+            <!-- Footer Info -->
+            <div style="text-align: center; color: #475569; font-size: 0.8rem; padding: 20px;">
+                <p>Dữ liệu được thu thập từ nguồn chính thống: baochinhphu.vn, vov2.vov.vn</p>
+                <p>© 2026 EduPath - Phiên bản 2.0</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/lookup.js"></script>
+</body>
+
+</html>

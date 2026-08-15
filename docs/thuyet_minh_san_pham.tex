@@ -1,0 +1,672 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{amsmath}
+
+% Page setup
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{gray}{Thuyết minh Sản phẩm Khoa học Kỹ thuật}}
+\fancyhead[R]{\textcolor{gray}{EduPath}}
+\fancyfoot[C]{\thepage}
+
+% Colors
+\definecolor{primaryblue}{RGB}{30, 58, 95}
+\definecolor{accentgold}{RGB}{212, 168, 83}
+\definecolor{lightgray}{RGB}{245, 247, 250}
+\definecolor{successgreen}{RGB}{34, 139, 34}
+\definecolor{codebg}{RGB}{248, 248, 248}
+
+% Title formatting
+\titleformat{\section}{\Large\bfseries\color{primaryblue}}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\large\bfseries\color{primaryblue!80}}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{primaryblue!60}}{\thesubsubsection.}{0.5em}{}
+
+% Code listing style
+\lstset{
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{gray!30},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{primaryblue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{successgreen},
+}
+
+\begin{document}
+
+% ========== TITLE PAGE ==========
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    {\Large\textsc{Cuộc thi Khoa học Kỹ thuật}}\\[0.3cm]
+    {\large\textsc{Lĩnh vực: Phần mềm Hệ thống}}\\[2cm]
+    
+    \rule{\textwidth}{1.5pt}\\[0.5cm]
+    {\Huge\bfseries\color{primaryblue} BÁO CÁO THUYẾT MINH}\\[0.3cm]
+    {\LARGE\bfseries\color{primaryblue} SẢN PHẨM DỰ THI}\\[0.5cm]
+    \rule{\textwidth}{1.5pt}\\[1.5cm]
+    
+    {\LARGE\bfseries EduPath}\\[0.3cm]
+    {\Large\color{accentgold} Hệ thống Tư vấn Tuyển sinh Thông minh}\\[0.2cm]
+    {\large\color{accentgold} tích hợp Trí tuệ Nhân tạo}\\[2cm]
+    
+    \begin{tabular}{rl}
+        \textbf{Tác giả:} & [Họ và tên học sinh] \\[0.2cm]
+        \textbf{Lớp:} & [Lớp] \\[0.2cm]
+        \textbf{Trường:} & [Tên trường THPT] \\[0.2cm]
+        \textbf{Giáo viên hướng dẫn:} & [Họ và tên GVHD] \\[0.2cm]
+    \end{tabular}
+    
+    \vfill
+    
+    {\large Năm 2026}
+    
+\end{titlepage}
+
+% ========== ABSTRACT ==========
+\section*{TÓM TẮT}
+\addcontentsline{toc}{section}{Tóm tắt}
+
+\textbf{EduPath} là một nền tảng web hỗ trợ học sinh THPT trong quá trình định hướng và đưa ra quyết định tuyển sinh đại học. Sản phẩm tích hợp ba chức năng chính: (1) Hệ thống tra cứu điểm chuẩn từ hơn 80 trường đại học trên toàn quốc với khả năng lọc và tìm kiếm đa chiều; (2) Bài test hướng nghiệp dựa trên mô hình Holland Code (RIASEC) giúp học sinh xác định xu hướng nghề nghiệp phù hợp với tính cách; và (3) Trợ lý ảo tích hợp công nghệ xử lý ngôn ngữ tự nhiên (NLP) và mô hình ngôn ngữ lớn (LLM) để tư vấn cá nhân hóa theo thời gian thực.
+
+Sản phẩm được phát triển nhằm giải quyết vấn đề thực tiễn: học sinh lớp 12 thường gặp khó khăn trong việc tiếp cận thông tin tuyển sinh một cách hệ thống và nhận được tư vấn cá nhân hóa. EduPath cung cấp giải pháp toàn diện, dễ sử dụng và miễn phí, giúp học sinh đưa ra quyết định sáng suốt hơn trong việc lựa chọn ngành học và trường đại học.
+
+\textbf{Từ khóa:} Tư vấn tuyển sinh, Trí tuệ nhân tạo, Holland Code, Chatbot, Web application
+
+\newpage
+
+% ========== TABLE OF CONTENTS ==========
+\tableofcontents
+\newpage
+
+% ========== CHAPTER 1: INTRODUCTION ==========
+\section{ĐẶT VẤN ĐỀ}
+
+\subsection{Lý do chọn đề tài}
+
+Hàng năm, có hơn một triệu học sinh lớp 12 tham gia kỳ thi tốt nghiệp THPT và đăng ký xét tuyển đại học. Tuy nhiên, theo khảo sát của Bộ Giáo dục và Đào tạo, có đến 60-70\% học sinh chưa có định hướng rõ ràng về ngành học và trường đại học trước khi đăng ký nguyện vọng.
+
+Những khó khăn học sinh thường gặp phải bao gồm:
+
+\begin{itemize}
+    \item \textbf{Thiếu thông tin tập trung:} Điểm chuẩn các trường nằm rải rác trên nhiều nguồn khác nhau, khó so sánh và đối chiếu.
+    \item \textbf{Không biết mình phù hợp với ngành nào:} Nhiều học sinh chọn ngành theo trào lưu hoặc áp lực gia đình mà không hiểu rõ bản thân.
+    \item \textbf{Thiếu tư vấn cá nhân hóa:} Các buổi tư vấn tập trung không thể đáp ứng nhu cầu riêng của từng học sinh.
+    \item \textbf{Phương thức tuyển sinh phức tạp:} Với nhiều phương thức xét tuyển (điểm thi, học bạ, đánh giá năng lực...), học sinh khó nắm bắt hết các lựa chọn.
+\end{itemize}
+
+Xuất phát từ những vấn đề thực tiễn trên, cùng với xu hướng ứng dụng trí tuệ nhân tạo (AI) trong giáo dục, tác giả đã phát triển sản phẩm \textbf{EduPath} - một nền tảng web tích hợp AI để hỗ trợ học sinh trong quá trình định hướng tuyển sinh.
+
+\subsection{Mục tiêu của đề tài}
+
+\subsubsection{Mục tiêu tổng quát}
+Xây dựng một hệ thống web thông minh hỗ trợ học sinh THPT tra cứu thông tin tuyển sinh, đánh giá xu hướng nghề nghiệp và nhận tư vấn cá nhân hóa thông qua trí tuệ nhân tạo.
+
+\subsubsection{Mục tiêu cụ thể}
+\begin{enumerate}
+    \item Xây dựng cơ sở dữ liệu điểm chuẩn từ hơn 80 trường đại học trên toàn quốc.
+    \item Phát triển module đánh giá hướng nghiệp dựa trên mô hình Holland Code.
+    \item Tích hợp trợ lý AI có khả năng trả lời câu hỏi về tuyển sinh bằng ngôn ngữ tự nhiên.
+    \item Thiết kế giao diện thân thiện, dễ sử dụng trên nhiều thiết bị.
+\end{enumerate}
+
+\subsection{Đối tượng và phạm vi nghiên cứu}
+
+\subsubsection{Đối tượng nghiên cứu}
+\begin{itemize}
+    \item Nhu cầu thông tin tuyển sinh của học sinh THPT
+    \item Mô hình đánh giá hướng nghiệp Holland Code (RIASEC)
+    \item Công nghệ xử lý ngôn ngữ tự nhiên và mô hình ngôn ngữ lớn
+\end{itemize}
+
+\subsubsection{Phạm vi nghiên cứu}
+\begin{itemize}
+    \item Dữ liệu điểm chuẩn các trường đại học tại Việt Nam (2023-2025)
+    \item Các ngành đào tạo phổ biến thuộc các khối thi A00, A01, B00, C00, D01
+    \item Triển khai dưới dạng web application, truy cập qua trình duyệt
+\end{itemize}
+
+\subsection{Phương pháp nghiên cứu}
+
+\begin{enumerate}
+    \item \textbf{Phương pháp thu thập dữ liệu:} Thu thập điểm chuẩn từ các nguồn chính thống (website trường đại học, Bộ GD\&ĐT).
+    \item \textbf{Phương pháp phân tích và thiết kế hệ thống:} Sử dụng quy trình phát triển phần mềm Agile.
+    \item \textbf{Phương pháp thực nghiệm:} Kiểm thử sản phẩm với nhóm học sinh thử nghiệm.
+    \item \textbf{Phương pháp đánh giá:} Khảo sát mức độ hài lòng của người dùng.
+\end{enumerate}
+
+\newpage
+
+% ========== CHAPTER 2: THEORY ==========
+\section{CƠ SỞ LÝ THUYẾT}
+
+\subsection{Tổng quan về tuyển sinh đại học tại Việt Nam}
+
+Hệ thống tuyển sinh đại học tại Việt Nam hiện nay áp dụng nhiều phương thức xét tuyển song song:
+
+\begin{table}[H]
+\centering
+\caption{Các phương thức xét tuyển đại học phổ biến}
+\begin{tabular}{|c|l|p{7cm}|}
+\hline
+\rowcolor{primaryblue}
+\textcolor{white}{\textbf{STT}} & \textcolor{white}{\textbf{Phương thức}} & \textcolor{white}{\textbf{Mô tả}} \\
+\hline
+1 & Xét điểm thi THPT & Dựa trên kết quả kỳ thi tốt nghiệp THPT Quốc gia \\
+\hline
+2 & Xét học bạ & Dựa trên điểm trung bình các môn học ở THPT \\
+\hline
+3 & Đánh giá năng lực & Kỳ thi riêng của ĐHQG Hà Nội, ĐHQG TP.HCM \\
+\hline
+4 & Đánh giá tư duy & Kỳ thi riêng của ĐH Bách khoa Hà Nội \\
+\hline
+5 & Xét tuyển thẳng & Dành cho học sinh giỏi quốc gia, quốc tế \\
+\hline
+\end{tabular}
+\end{table}
+
+Sự đa dạng của các phương thức xét tuyển đòi hỏi học sinh phải nắm vững thông tin và có chiến lược phù hợp.
+
+\subsection{Lý thuyết Holland Code (RIASEC)}
+
+\subsubsection{Giới thiệu}
+
+Lý thuyết Holland Code được phát triển bởi nhà tâm lý học John L. Holland vào những năm 1950. Đây là một trong những mô hình hướng nghiệp được sử dụng rộng rãi nhất trên thế giới, được áp dụng tại hơn 130 quốc gia.
+
+\subsubsection{Sáu nhóm tính cách RIASEC}
+
+Theo Holland, con người và môi trường làm việc có thể được phân loại thành 6 nhóm:
+
+\begin{table}[H]
+\centering
+\caption{Mô hình 6 nhóm tính cách Holland}
+\begin{tabular}{|c|l|p{5cm}|p{4cm}|}
+\hline
+\rowcolor{primaryblue}
+\textcolor{white}{\textbf{Mã}} & \textcolor{white}{\textbf{Tên}} & \textcolor{white}{\textbf{Đặc điểm}} & \textcolor{white}{\textbf{Nghề phù hợp}} \\
+\hline
+R & Realistic (Thực tế) & Thích làm việc với máy móc, công cụ, hoạt động ngoài trời & Kỹ sư, Kiến trúc sư, Nông nghiệp \\
+\hline
+I & Investigative (Nghiên cứu) & Thích phân tích, tìm hiểu, giải quyết vấn đề & Nhà khoa học, Bác sĩ, Lập trình viên \\
+\hline
+A & Artistic (Nghệ thuật) & Thích sáng tạo, tự do biểu đạt, thẩm mỹ & Họa sĩ, Nhạc sĩ, Thiết kế \\
+\hline
+S & Social (Xã hội) & Thích giúp đỡ, giao tiếp, làm việc với người khác & Giáo viên, Bác sĩ, Nhân viên xã hội \\
+\hline
+E & Enterprising (Quản lý) & Thích lãnh đạo, thuyết phục, kinh doanh & Doanh nhân, Luật sư, Quản lý \\
+\hline
+C & Conventional (Nghiệp vụ) & Thích công việc có tổ chức, chi tiết, quy trình rõ ràng & Kế toán, Thư ký, Hành chính \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Nguyên lý hoạt động}
+
+Mô hình Holland dựa trên 4 nguyên lý cơ bản:
+
+\begin{enumerate}
+    \item \textbf{Nguyên lý phân loại:} Mỗi người có thể được xếp vào một trong 6 nhóm tính cách.
+    \item \textbf{Nguyên lý môi trường:} Môi trường làm việc cũng có thể được phân loại theo 6 nhóm tương ứng.
+    \item \textbf{Nguyên lý phù hợp:} Người lao động sẽ hài lòng và thành công nhất khi làm việc trong môi trường phù hợp với tính cách.
+    \item \textbf{Nguyên lý Holland Code:} Tính cách của một người được biểu diễn bằng mã 3 chữ cái (VD: RIA, SEC), thể hiện 3 nhóm có điểm số cao nhất.
+\end{enumerate}
+
+\subsection{Trí tuệ nhân tạo và Mô hình ngôn ngữ lớn (LLM)}
+
+\subsubsection{Định nghĩa}
+
+\textbf{Trí tuệ nhân tạo (AI - Artificial Intelligence)} là một lĩnh vực của khoa học máy tính tập trung vào việc tạo ra các hệ thống có khả năng thực hiện những nhiệm vụ thường đòi hỏi trí thông minh của con người.
+
+\textbf{Mô hình ngôn ngữ lớn (LLM - Large Language Model)} là một loại mô hình AI được huấn luyện trên lượng dữ liệu văn bản khổng lồ, có khả năng hiểu và sinh ra ngôn ngữ tự nhiên.
+
+\subsubsection{Ứng dụng trong tư vấn giáo dục}
+
+LLM có thể được ứng dụng trong tư vấn giáo dục nhờ các khả năng:
+
+\begin{itemize}
+    \item \textbf{Hiểu ngữ cảnh:} Nắm bắt ý định câu hỏi của người dùng
+    \item \textbf{Sinh văn bản:} Trả lời câu hỏi một cách tự nhiên, mạch lạc
+    \item \textbf{Tổng hợp thông tin:} Kết hợp nhiều nguồn dữ liệu để đưa ra tư vấn
+    \item \textbf{Cá nhân hóa:} Điều chỉnh câu trả lời dựa trên thông tin cụ thể của người dùng
+\end{itemize}
+
+\newpage
+
+% ========== CHAPTER 3: PRODUCT ==========
+\section{SẢN PHẨM EDUPATH}
+
+\subsection{Tổng quan sản phẩm}
+
+\textbf{EduPath} là một ứng dụng web được thiết kế để hỗ trợ học sinh THPT trong quá trình định hướng tuyển sinh đại học. Sản phẩm tích hợp ba module chức năng chính:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    module/.style={rectangle, draw=primaryblue, fill=lightgray, minimum width=4cm, minimum height=1.5cm, align=center, rounded corners=5pt, font=\bfseries},
+    arrow/.style={->, thick, primaryblue}
+]
+    % Central
+    \node[module, fill=primaryblue, text=white, minimum width=5cm] (main) at (0, 0) {EduPath\\Hệ thống Tư vấn Tuyển sinh};
+    
+    % Three modules
+    \node[module] (lookup) at (-5, -3) {Module 1\\Tra cứu Điểm chuẩn};
+    \node[module] (holland) at (0, -3) {Module 2\\Test Hướng nghiệp\\Holland};
+    \node[module] (ai) at (5, -3) {Module 3\\Trợ lý AI\\Tư vấn};
+    
+    % Arrows
+    \draw[arrow] (main) -- (lookup);
+    \draw[arrow] (main) -- (holland);
+    \draw[arrow] (main) -- (ai);
+    
+\end{tikzpicture}
+\caption{Cấu trúc ba module chính của EduPath}
+\end{figure}
+
+\subsection{Module 1: Tra cứu Điểm chuẩn Đại học}
+
+\subsubsection{Mô tả chức năng}
+
+Module này cung cấp khả năng tra cứu điểm chuẩn từ hơn \textbf{80 trường đại học} trên toàn quốc, với dữ liệu được cập nhật theo từng năm tuyển sinh.
+
+\subsubsection{Các tính năng chi tiết}
+
+\begin{table}[H]
+\centering
+\caption{Tính năng của Module Tra cứu Điểm chuẩn}
+\begin{tabular}{|c|p{4cm}|p{8cm}|}
+\hline
+\rowcolor{primaryblue}
+\textcolor{white}{\textbf{STT}} & \textcolor{white}{\textbf{Tính năng}} & \textcolor{white}{\textbf{Mô tả chi tiết}} \\
+\hline
+1 & Tìm kiếm đa chiều & Tìm theo tên trường, mã trường, tên ngành, mã ngành \\
+\hline
+2 & Lọc theo khối thi & Hỗ trợ các khối: A00, A01, B00, C00, D01, D07... \\
+\hline
+3 & Lọc theo khu vực & Miền Bắc, Miền Trung, Miền Nam, TP.HCM, Hà Nội \\
+\hline
+4 & Sắp xếp kết quả & Theo điểm chuẩn (tăng/giảm), theo tên trường (A-Z) \\
+\hline
+5 & Hiển thị chi tiết & Tên trường, ngành, khối, điểm chuẩn, ghi chú đặc biệt \\
+\hline
+6 & Tích hợp AI & Click để hỏi AI thêm về ngành/trường đang xem \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Cấu trúc dữ liệu}
+
+Dữ liệu điểm chuẩn được lưu trữ dưới dạng JSON với cấu trúc như sau:
+
+\begin{lstlisting}[language=Java, caption=Cấu trúc dữ liệu điểm chuẩn]
+{
+    "school_name": "Dai hoc Bach khoa Ha Noi",
+    "school_code": "BKA",
+    "major_name": "Khoa hoc May tinh",
+    "major_code": "7480101",
+    "exam_group": "A00",
+    "score_2025": 28.50,
+    "score_2024": 28.00,
+    "region": "Mien Bac",
+    "note": "Chuong trinh tien tien"
+}
+\end{lstlisting}
+
+\subsubsection{Quy mô dữ liệu}
+
+\begin{itemize}
+    \item Số trường đại học: 80+
+    \item Số ngành đào tạo: 500+
+    \item Số bản ghi điểm chuẩn: 2,000+
+    \item Năm dữ liệu: 2023, 2024, 2025
+\end{itemize}
+
+\subsection{Module 2: Bài test Hướng nghiệp Holland (RIASEC)}
+
+\subsubsection{Mô tả chức năng}
+
+Module này giúp học sinh xác định xu hướng nghề nghiệp phù hợp với tính cách thông qua bộ câu hỏi dựa trên mô hình Holland Code.
+
+\subsubsection{Quy trình thực hiện}
+
+\begin{enumerate}
+    \item \textbf{Bước 1 - Giới thiệu:} Hiển thị thông tin về bài test và 6 nhóm tính cách
+    \item \textbf{Bước 2 - Trả lời câu hỏi:} Người dùng trả lời 30 câu hỏi trắc nghiệm
+    \item \textbf{Bước 3 - Tính điểm:} Hệ thống tính điểm cho từng nhóm RIASEC
+    \item \textbf{Bước 4 - Hiển thị kết quả:} Xác định Holland Code và đề xuất ngành học
+\end{enumerate}
+
+\subsubsection{Thuật toán tính điểm}
+
+Điểm của mỗi nhóm được tính theo công thức:
+
+\begin{equation}
+Score_i = \sum_{j=1}^{n_i} w_j \times answer_j
+\end{equation}
+
+Trong đó:
+\begin{itemize}
+    \item $Score_i$: Điểm của nhóm tính cách $i$ (R, I, A, S, E, C)
+    \item $n_i$: Số câu hỏi thuộc nhóm $i$
+    \item $w_j$: Trọng số của câu hỏi $j$
+    \item $answer_j$: Câu trả lời của người dùng (1-5)
+\end{itemize}
+
+\subsubsection{Kết quả đầu ra}
+
+\begin{itemize}
+    \item \textbf{Biểu đồ radar:} Hiển thị điểm số 6 nhóm tính cách
+    \item \textbf{Holland Code:} Mã 3 chữ cái (VD: RIA, SEC)
+    \item \textbf{Mô tả chi tiết:} Giải thích từng nhóm tính cách nổi bật
+    \item \textbf{Ngành học đề xuất:} Danh sách ngành phù hợp với Holland Code
+    \item \textbf{Nghề nghiệp gợi ý:} Các vị trí công việc tiềm năng
+\end{itemize}
+
+\subsection{Module 3: Trợ lý AI Tư vấn Tuyển sinh}
+
+\subsubsection{Mô tả chức năng}
+
+Module này cung cấp một chatbot thông minh có khả năng trả lời các câu hỏi về tuyển sinh bằng ngôn ngữ tự nhiên, giúp học sinh nhận được tư vấn cá nhân hóa 24/7.
+
+\subsubsection{Công nghệ sử dụng}
+
+\begin{table}[H]
+\centering
+\caption{Công nghệ trong Module Trợ lý AI}
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\rowcolor{primaryblue}
+\textcolor{white}{\textbf{Thành phần}} & \textcolor{white}{\textbf{Mô tả}} \\
+\hline
+Mô hình ngôn ngữ & GPT-class Large Language Model (thông qua Groq API) \\
+\hline
+Xử lý ngôn ngữ & Natural Language Processing (NLP) cho tiếng Việt \\
+\hline
+Rendering & Markdown rendering cho bảng, danh sách, định dạng \\
+\hline
+Tích hợp dữ liệu & Kết hợp dữ liệu điểm chuẩn vào ngữ cảnh trả lời \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Khả năng của AI}
+
+\begin{enumerate}
+    \item \textbf{Trả lời câu hỏi về điểm chuẩn:}
+    \begin{itemize}
+        \item ``Điểm chuẩn ngành CNTT ĐH Bách khoa năm 2025 là bao nhiêu?''
+        \item ``Trường nào có điểm chuẩn ngành Kinh tế thấp nhất?''
+    \end{itemize}
+    
+    \item \textbf{Tư vấn lựa chọn ngành:}
+    \begin{itemize}
+        \item ``Em có 27 điểm khối A00, nên học ngành gì?''
+        \item ``So sánh ngành Kinh tế và Marketing về cơ hội việc làm''
+    \end{itemize}
+    
+    \item \textbf{Giải đáp thắc mắc:}
+    \begin{itemize}
+        \item ``Làm sao để đăng ký xét tuyển học bạ?''
+        \item ``Khi nào công bố điểm chuẩn 2026?''
+    \end{itemize}
+    
+    \item \textbf{Cung cấp thông tin nghề nghiệp:}
+    \begin{itemize}
+        \item ``Học ngành Y khoa ra trường làm gì?''
+        \item ``Mức lương trung bình của kỹ sư CNTT là bao nhiêu?''
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Giao diện hội thoại}
+
+Giao diện chat được thiết kế hiện đại với các tính năng:
+
+\begin{itemize}
+    \item Hiển thị tin nhắn dạng bubble (bong bóng hội thoại)
+    \item Phân biệt tin nhắn người dùng và AI bằng màu sắc
+    \item Hỗ trợ Markdown: bảng, danh sách, in đậm, in nghiêng
+    \item Typing indicator khi AI đang xử lý
+    \item Các câu hỏi gợi ý (quick actions) để bắt đầu nhanh
+\end{itemize}
+
+\subsection{Kiến trúc hệ thống}
+
+\subsubsection{Sơ đồ kiến trúc}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    box/.style={rectangle, draw=primaryblue, fill=lightgray, minimum width=3.5cm, minimum height=1.2cm, align=center, rounded corners=3pt},
+    arrow/.style={->, thick, primaryblue},
+    label/.style={font=\small\color{gray}}
+]
+    % User
+    \node[box, fill=accentgold!30] (user) at (-6, 0) {Người dùng\\(Browser)};
+    
+    % Frontend
+    \node[box] (html) at (-2, 1.5) {HTML5\\Cấu trúc};
+    \node[box] (css) at (-2, 0) {CSS3\\Giao diện};
+    \node[box] (js) at (-2, -1.5) {JavaScript\\Logic};
+    
+    % Backend/API
+    \node[box] (data) at (2.5, 1) {JSON Database\\Điểm chuẩn};
+    \node[box] (groq) at (2.5, -1) {Groq API\\LLM Engine};
+    
+    % Arrows
+    \draw[arrow, <->] (user) -- (-3.5, 0);
+    \draw[arrow, <->] (js) -- (data);
+    \draw[arrow, <->] (js) -- (groq);
+    
+    % Labels
+    \node[label] at (-2, 2.5) {\textbf{Frontend Layer}};
+    \node[label] at (2.5, 2.5) {\textbf{Data \& API Layer}};
+    
+    % Bounding boxes
+    \draw[dashed, gray] (-4, -2.5) rectangle (0, 2.2);
+    \draw[dashed, gray] (0.5, -2) rectangle (4.5, 1.8);
+    
+\end{tikzpicture}
+\caption{Kiến trúc hệ thống EduPath}
+\end{figure}
+
+\subsubsection{Công nghệ sử dụng}
+
+\begin{table}[H]
+\centering
+\caption{Stack công nghệ của EduPath}
+\begin{tabular}{|l|l|p{7cm}|}
+\hline
+\rowcolor{primaryblue}
+\textcolor{white}{\textbf{Lớp}} & \textcolor{white}{\textbf{Công nghệ}} & \textcolor{white}{\textbf{Mục đích}} \\
+\hline
+Giao diện & HTML5, CSS3 & Cấu trúc và thiết kế responsive \\
+\hline
+Logic & JavaScript ES6+ & Xử lý tương tác, gọi API \\
+\hline
+Icons & Font Awesome 6 & Biểu tượng giao diện \\
+\hline
+Markdown & Marked.js & Render markdown trong chat \\
+\hline
+Dữ liệu & JSON & Lưu trữ điểm chuẩn \\
+\hline
+AI/NLP & Groq API & Xử lý ngôn ngữ tự nhiên \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Giao diện người dùng}
+
+\subsubsection{Nguyên tắc thiết kế}
+
+Giao diện EduPath được thiết kế theo các nguyên tắc:
+
+\begin{enumerate}
+    \item \textbf{Đơn giản và trực quan:} Người dùng có thể sử dụng ngay mà không cần hướng dẫn
+    \item \textbf{Responsive Design:} Tương thích tốt trên máy tính, tablet và điện thoại
+    \item \textbf{Nhất quán:} Sử dụng hệ thống màu sắc và typography thống nhất
+    \item \textbf{Hiện đại:} Áp dụng xu hướng thiết kế UI/UX mới nhất
+\end{enumerate}
+
+\subsubsection{Bảng màu chính}
+
+\begin{table}[H]
+\centering
+\caption{Hệ thống màu sắc của EduPath}
+\begin{tabular}{|l|c|l|}
+\hline
+\rowcolor{primaryblue}
+\textcolor{white}{\textbf{Tên màu}} & \textcolor{white}{\textbf{Mã màu}} & \textcolor{white}{\textbf{Ứng dụng}} \\
+\hline
+Primary Navy & \#1E3A5F & Màu chính, header, button \\
+\hline
+Accent Gold & \#D4A853 & Điểm nhấn, highlight \\
+\hline
+Light Gray & \#F5F7FA & Background, card \\
+\hline
+Success Green & \#228B22 & Thông báo thành công \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+% ========== CHAPTER 4: RESULTS ==========
+\section{KẾT QUẢ VÀ ĐÁNH GIÁ}
+
+\subsection{Kết quả đạt được}
+
+Sau quá trình nghiên cứu và phát triển, sản phẩm EduPath đã hoàn thành các mục tiêu đề ra:
+
+\begin{table}[H]
+\centering
+\caption{Đánh giá mức độ hoàn thành mục tiêu}
+\begin{tabular}{|c|p{8cm}|c|}
+\hline
+\rowcolor{primaryblue}
+\textcolor{white}{\textbf{STT}} & \textcolor{white}{\textbf{Mục tiêu}} & \textcolor{white}{\textbf{Trạng thái}} \\
+\hline
+1 & Xây dựng CSDL điểm chuẩn 80+ trường & \textcolor{successgreen}{Hoàn thành} \\
+\hline
+2 & Phát triển module test Holland & \textcolor{successgreen}{Hoàn thành} \\
+\hline
+3 & Tích hợp trợ lý AI & \textcolor{successgreen}{Hoàn thành} \\
+\hline
+4 & Thiết kế giao diện responsive & \textcolor{successgreen}{Hoàn thành} \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Ưu điểm của sản phẩm}
+
+\begin{enumerate}
+    \item \textbf{Tích hợp toàn diện:} Kết hợp 3 chức năng trong một nền tảng duy nhất
+    \item \textbf{Dễ sử dụng:} Giao diện thân thiện, không cần cài đặt
+    \item \textbf{Miễn phí:} Không yêu cầu đăng ký hay trả phí
+    \item \textbf{Cá nhân hóa:} AI tư vấn dựa trên thông tin cụ thể của từng người
+    \item \textbf{Cập nhật:} Dữ liệu điểm chuẩn được cập nhật hàng năm
+    \item \textbf{Đa nền tảng:} Hoạt động trên mọi thiết bị có trình duyệt web
+\end{enumerate}
+
+\subsection{Hạn chế và hướng phát triển}
+
+\subsubsection{Hạn chế hiện tại}
+
+\begin{itemize}
+    \item Dữ liệu điểm chuẩn cần cập nhật thủ công
+    \item Chưa có chức năng lưu lịch sử người dùng
+    \item AI có thể không chính xác 100\% trong một số trường hợp
+\end{itemize}
+
+\subsubsection{Hướng phát triển}
+
+\begin{itemize}
+    \item Thêm chức năng dự đoán khả năng trúng tuyển
+    \item Phát triển biểu đồ so sánh xu hướng điểm qua các năm
+    \item Tích hợp hệ thống tài khoản để lưu lịch sử
+    \item Mở rộng dữ liệu học phí và thông tin trường
+    \item Phát triển ứng dụng mobile (iOS, Android)
+\end{itemize}
+
+\newpage
+
+% ========== CHAPTER 5: CONCLUSION ==========
+\section{KẾT LUẬN VÀ KIẾN NGHỊ}
+
+\subsection{Kết luận}
+
+Đề tài ``EduPath - Hệ thống Tư vấn Tuyển sinh Thông minh'' đã được nghiên cứu và phát triển thành công, đáp ứng các mục tiêu đề ra ban đầu. Sản phẩm mang lại những đóng góp sau:
+
+\begin{enumerate}
+    \item \textbf{Về mặt khoa học:} Ứng dụng thành công lý thuyết Holland Code và công nghệ AI/NLP vào bài toán tư vấn tuyển sinh.
+    
+    \item \textbf{Về mặt thực tiễn:} Cung cấp công cụ hữu ích giúp học sinh THPT tiếp cận thông tin tuyển sinh một cách dễ dàng và nhận được tư vấn cá nhân hóa.
+    
+    \item \textbf{Về mặt kỹ thuật:} Xây dựng thành công một hệ thống web tích hợp nhiều công nghệ hiện đại (HTML5, CSS3, JavaScript, LLM API).
+\end{enumerate}
+
+\subsection{Kiến nghị}
+
+\begin{enumerate}
+    \item \textbf{Đối với học sinh:} Nên sử dụng EduPath như một công cụ hỗ trợ, kết hợp với việc tham khảo ý kiến thầy cô, phụ huynh và tìm hiểu thực tế về ngành học.
+    
+    \item \textbf{Đối với nhà trường:} Có thể giới thiệu EduPath cho học sinh lớp 12 trong các buổi hướng nghiệp, tư vấn tuyển sinh.
+    
+    \item \textbf{Đối với cơ quan quản lý:} Khuyến khích phát triển các nền tảng tương tự để hỗ trợ học sinh tiếp cận thông tin tuyển sinh một cách công bằng và minh bạch.
+\end{enumerate}
+
+\newpage
+
+% ========== REFERENCES ==========
+\section*{TÀI LIỆU THAM KHẢO}
+\addcontentsline{toc}{section}{Tài liệu tham khảo}
+
+\begin{enumerate}
+    \item Bộ Giáo dục và Đào tạo (2025). \textit{Quy chế tuyển sinh đại học, cao đẳng năm 2025}.
+    
+    \item Holland, J. L. (1997). \textit{Making Vocational Choices: A Theory of Vocational Personalities and Work Environments}. Psychological Assessment Resources.
+    
+    \item Brown, T. B., et al. (2020). \textit{Language Models are Few-Shot Learners}. arXiv preprint arXiv:2005.14165.
+    
+    \item Các website tuyển sinh chính thức của các trường đại học.
+    
+    \item Groq API Documentation (2025). \url{https://console.groq.com/docs}
+\end{enumerate}
+
+\newpage
+
+% ========== APPENDIX ==========
+\section*{PHỤ LỤC}
+\addcontentsline{toc}{section}{Phụ lục}
+
+\subsection*{Phụ lục A: Danh sách trường đại học trong CSDL}
+
+\textit{(Liệt kê 80+ trường đại học có trong hệ thống)}
+
+\subsection*{Phụ lục B: Bộ câu hỏi test Holland}
+
+\textit{(30 câu hỏi được sử dụng trong bài test)}
+
+\subsection*{Phụ lục C: Kết quả khảo sát người dùng}
+
+\textit{(Số liệu khảo sát sau khi triển khai thử nghiệm)}
+
+\end{document}

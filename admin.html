@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản lý dữ liệu | EduPath</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>EduPath Admin</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-section="universities">
+                    <i class="fa-solid fa-university"></i>
+                    <span>Trường đại học</span>
+                </a>
+                <a href="#" class="nav-item" data-section="majors">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Ngành học</span>
+                </a>
+                <a href="#" class="nav-item" data-section="import">
+                    <i class="fa-solid fa-upload"></i>
+                    <span>Import dữ liệu</span>
+                </a>
+                <a href="#" class="nav-item" data-section="export">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Export dữ liệu</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Về trang chủ
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1 id="page-title">Quản lý Trường đại học</h1>
+                <div class="header-actions">
+                    <span class="sync-status" id="sync-status">
+                        <i class="fa-solid fa-cloud"></i>
+                        <span>Đang kết nối...</span>
+                    </span>
+                </div>
+            </header>
+
+            <!-- Universities Section -->
+            <section id="universities-section" class="section active">
+                <div class="section-header">
+                    <div class="search-box">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" id="search-uni" placeholder="Tìm trường...">
+                    </div>
+                    <button class="btn btn-primary" id="add-uni-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Thêm trường mới
+                    </button>
+                </div>
+
+                <div class="data-table-container">
+                    <table class="data-table" id="universities-table">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Tên trường</th>
+                                <th>Loại</th>
+                                <th>Địa điểm</th>
+                                <th>Số ngành</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="universities-tbody">
+                            <!-- Data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Majors Section -->
+            <section id="majors-section" class="section">
+                <div class="section-header">
+                    <div class="filter-group">
+                        <select id="filter-uni">
+                            <option value="">Chọn trường...</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="add-major-btn" disabled>
+                        <i class="fa-solid fa-plus"></i>
+                        Thêm ngành mới
+                    </button>
+                </div>
+
+                <div class="data-table-container">
+                    <table class="data-table" id="majors-table">
+                        <thead>
+                            <tr>
+                                <th>Mã ngành</th>
+                                <th>Tên ngành</th>
+                                <th>Chỉ tiêu</th>
+                                <th>Khối thi</th>
+                                <th>Điểm chuẩn</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="majors-tbody">
+                            <tr>
+                                <td colspan="6" class="empty-state">Chọn trường để xem danh sách ngành</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Import Section -->
+            <section id="import-section" class="section">
+                <div class="import-card">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <h2>Import từ JSON</h2>
+                    <p>Đồng bộ dữ liệu từ file universities.json lên Firebase</p>
+                    <button class="btn btn-primary btn-lg" id="import-json-btn">
+                        <i class="fa-solid fa-upload"></i>
+                        Import dữ liệu
+                    </button>
+                    <div class="import-progress" id="import-progress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span id="progress-text">0%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Export Section -->
+            <section id="export-section" class="section">
+                <div class="export-card">
+                    <i class="fa-solid fa-cloud-arrow-down"></i>
+                    <h2>Export ra JSON</h2>
+                    <p>Tải dữ liệu từ Firebase về file JSON</p>
+                    <button class="btn btn-primary btn-lg" id="export-json-btn">
+                        <i class="fa-solid fa-download"></i>
+                        Export dữ liệu
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal: Add/Edit University -->
+    <div class="modal" id="uni-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="uni-modal-title">Thêm trường mới</h2>
+                <button class="modal-close" id="close-uni-modal">&times;</button>
+            </div>
+            <form id="uni-form">
+                <div class="form-group">
+                    <label for="uni-code">Mã trường *</label>
+                    <input type="text" id="uni-code" required placeholder="VD: BKA">
+                </div>
+                <div class="form-group">
+                    <label for="uni-name">Tên trường *</label>
+                    <input type="text" id="uni-name" required placeholder="VD: Đại học Bách Khoa Hà Nội">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="uni-type">Loại hình</label>
+                        <select id="uni-type">
+                            <option value="Công lập">Công lập</option>
+                            <option value="Tư thục">Tư thục</option>
+                            <option value="Quốc tế">Quốc tế</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="uni-location">Địa điểm</label>
+                        <input type="text" id="uni-location" placeholder="VD: Hà Nội">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-uni">Hủy</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-save"></i>
+                        Lưu
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Add/Edit Major -->
+    <div class="modal" id="major-modal">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h2 id="major-modal-title">Thêm ngành mới</h2>
+                <button class="modal-close" id="close-major-modal">&times;</button>
+            </div>
+            <form id="major-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="major-code">Mã ngành *</label>
+                        <input type="text" id="major-code" required placeholder="VD: IT1">
+                    </div>
+                    <div class="form-group">
+                        <label for="major-quota">Chỉ tiêu</label>
+                        <input type="number" id="major-quota" placeholder="VD: 200">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="major-name">Tên ngành *</label>
+                    <input type="text" id="major-name" required placeholder="VD: Công nghệ thông tin">
+                </div>
+
+                <div class="scores-section">
+                    <div class="scores-header">
+                        <h3>Điểm chuẩn theo khối</h3>
+                        <button type="button" class="btn btn-sm btn-secondary" id="add-score-btn">
+                            <i class="fa-solid fa-plus"></i> Thêm khối
+                        </button>
+                    </div>
+                    <div id="scores-container">
+                        <!-- Score entries will be added here -->
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-major">Hủy</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-save"></i>
+                        Lưu
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-check-circle"></i>
+        <span id="toast-message">Thành công!</span>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

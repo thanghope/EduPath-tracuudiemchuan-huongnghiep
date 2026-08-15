@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trắc nghiệm hướng nghiệp Holland - Khám phá tính cách và tìm ngành nghề phù hợp">
+    <title>Trắc nghiệm Hướng nghiệp Holland - EduPath</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-lighter: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #22c55e;
+            --accent-amber: #f59e0b;
+            --accent-pink: #ec4899;
+            --accent-cyan: #06b6d4;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a2e 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ffffff;
+        }
+
+        .logo-text {
+            color: #ffffff;
+        }
+
+        /* Main Container */
+        .quiz-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 40px 80px;
+        }
+
+        /* Quiz Card */
+        .quiz-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Intro Section - Two Column Layout */
+        .intro-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 50px 50px;
+        }
+
+        .intro-left {
+            flex: 1;
+            text-align: left;
+        }
+
+        .intro-right {
+            flex: 1;
+        }
+
+        .intro-icon {
+            width: 68px;
+            height: 68px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 28px;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.35);
+        }
+
+        .intro-section h1 {
+            color: var(--text-primary);
+            font-size: 2.4rem;
+            margin-bottom: 18px;
+            line-height: 1.15;
+            font-weight: 700;
+        }
+
+        .intro-section>.intro-left>p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.75;
+            font-size: 1.05rem;
+        }
+
+        .intro-time {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .intro-time i {
+            color: var(--accent-purple);
+        }
+
+        /* Holland Types Preview - 2x3 Grid */
+        .holland-types {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .holland-type {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .holland-type:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+        }
+
+        .holland-type:hover .holland-type-icon {
+            transform: scale(1.1);
+        }
+
+        .holland-type-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Icon colors for each type */
+        .holland-type.realistic .holland-type-icon {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.3);
+        }
+
+        .holland-type.investigative .holland-type-icon {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .holland-type.artistic .holland-type-icon {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+        }
+
+        .holland-type.social .holland-type-icon {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .holland-type.enterprising .holland-type-icon {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .holland-type.conventional .holland-type-icon {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .holland-type:hover.realistic {
+            border-color: rgba(249, 115, 22, 0.4);
+        }
+
+        .holland-type:hover.investigative {
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .holland-type:hover.artistic {
+            border-color: rgba(236, 72, 153, 0.4);
+        }
+
+        .holland-type:hover.social {
+            border-color: rgba(34, 197, 94, 0.4);
+        }
+
+        .holland-type:hover.enterprising {
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+
+        .holland-type:hover.conventional {
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+
+        .holland-type-name {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .holland-type-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* Start Button */
+        .start-btn {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            border: none;
+            color: white;
+            padding: 16px 36px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Progress Section */
+        .progress-section {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .progress-info {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-time {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+
+        /* Question Section */
+        .question-section {
+            display: none;
+            padding: 50px;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .question-number {
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .question-type-badge {
+            background: rgba(139, 92, 246, 0.2);
+            color: #c4b5fd;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+        }
+
+        .question-text {
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+
+        /* Likert Scale */
+        .likert-scale {
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+        }
+
+        .likert-option {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .likert-option:hover {
+            border-color: var(--accent-blue);
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateX(8px);
+        }
+
+        .likert-option:active {
+            transform: translateX(8px) scale(0.98);
+        }
+
+        .likert-emoji {
+            font-size: 1.8rem;
+        }
+
+        .likert-text {
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .likert-desc {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+
+        .likert-score {
+            margin-left: auto;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* Navigation */
+        .question-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-btn.back {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+
+        .nav-btn.back:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-btn.back:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .nav-btn.skip {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+        }
+
+        .nav-btn.skip:hover {
+            color: var(--text-secondary);
+        }
+
+        /* Results Section */
+        .result-section {
+            display: none;
+            padding: 50px;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .result-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .result-title {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .result-code {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .result-code strong {
+            color: var(--accent-purple);
+            font-size: 1.2rem;
+        }
+
+        /* Radar Chart */
+        .chart-container {
+            max-width: 350px;
+            margin: 0 auto 40px;
+        }
+
+        /* Top Types */
+        .top-types {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .type-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .type-card.primary {
+            border-color: var(--accent-purple);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .type-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .type-card-icon {
+            font-size: 2rem;
+        }
+
+        .type-card-info h3 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+        }
+
+        .type-card-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .type-card p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        /* Careers Grid */
+        .careers-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .careers-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .career-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 18px;
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        .career-chip i {
+            color: var(--accent-amber);
+        }
+
+        /* Action Buttons */
+        .result-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .action-btn.primary {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            border: none;
+            color: white;
+        }
+
+        .action-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .action-btn.secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+
+        .action-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .quiz-wrapper {
+                padding: 24px 20px 60px;
+            }
+
+            .intro-section {
+                flex-direction: column;
+                gap: 40px;
+                padding: 40px 32px;
+            }
+
+            .intro-left {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .intro-section h1 {
+                font-size: 1.9rem;
+            }
+
+            .question-section {
+                padding: 40px 32px;
+            }
+
+            .result-section {
+                padding: 40px 32px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .quiz-wrapper {
+                padding: 16px 12px 50px;
+            }
+
+            .intro-section {
+                padding: 32px 20px;
+                gap: 32px;
+            }
+
+            .intro-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+                border-radius: 14px;
+            }
+
+            .intro-section h1 {
+                font-size: 1.6rem;
+            }
+
+            .intro-section>.intro-left>p {
+                font-size: 0.9rem;
+            }
+
+            .holland-types {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .holland-type {
+                padding: 16px 12px;
+            }
+
+            .holland-type-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .holland-type-name {
+                font-size: 0.8rem;
+            }
+
+            .holland-type-desc {
+                font-size: 0.72rem;
+            }
+
+            .question-section,
+            .result-section {
+                padding: 28px 18px;
+            }
+
+            .top-types {
+                grid-template-columns: 1fr;
+            }
+
+            .likert-option {
+                padding: 14px 16px;
+            }
+
+            .likert-emoji {
+                font-size: 1.5rem;
+            }
+
+            .question-text {
+                font-size: 1.15rem;
+            }
+
+            .start-btn {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">Edu<span>Path</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                <li><a href="lookup.html" class="nav-link">Điểm chuẩn</a></li>
+                <li><a href="analysis.html" class="nav-link">Phân tích</a></li>
+                <li><a href="personalize.html" class="nav-link">Cá nhân hóa</a></li>
+                <li><a href="career.html" class="nav-link active">Hướng nghiệp</a></li>
+            </ul>
+            <a href="chat.html" class="btn btn-gold">
+                <i class="fa-solid fa-robot"></i> Hỏi đáp AI
+            </a>
+        </div>
+    </nav>
+
+    <!-- Quiz Container -->
+    <main class="quiz-wrapper">
+        <div class="quiz-card">
+            <!-- Intro Section -->
+            <div class="intro-section" id="intro-section">
+                <!-- Left Column -->
+                <div class="intro-left">
+                    <div class="intro-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h1>Khám phá bản thân<br>với Holland</h1>
+                    <p>Trả lời 30 câu hỏi để tìm ra nhóm tính cách nghề nghiệp và ngành học phù hợp với bạn.</p>
+
+                    <button class="start-btn" onclick="startQuiz()">
+                        <i class="fa-solid fa-play"></i>
+                        Bắt đầu làm bài
+                    </button>
+
+                    <div class="intro-time">
+                        <i class="fa-solid fa-clock"></i> Thời gian: ~5 phút
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="intro-right">
+                    <div class="holland-types">
+                        <div class="holland-type realistic">
+                            <div class="holland-type-icon">
+                                <i class="fa-solid fa-wrench"></i>
+                            </div>
+                            <div class="holland-type-name">Realistic</div>
+                            <div class="holland-type-desc">Thực tế</div>
+                        </div>
+                        <div class="holland-type investigative">
+                            <div class="holland-type-icon">
+                                <i class="fa-solid fa-microscope"></i>
+                            </div>
+                            <div class="holland-type-name">Investigative</div>
+                            <div class="holland-type-desc">Nghiên cứu</div>
+                        </div>
+                        <div class="holland-type artistic">
+                            <div class="holland-type-icon">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <div class="holland-type-name">Artistic</div>
+                            <div class="holland-type-desc">Nghệ thuật</div>
+                        </div>
+                        <div class="holland-type social">
+                            <div class="holland-type-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div class="holland-type-name">Social</div>
+                            <div class="holland-type-desc">Xã hội</div>
+                        </div>
+                        <div class="holland-type enterprising">
+                            <div class="holland-type-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div class="holland-type-name">Enterprising</div>
+                            <div class="holland-type-desc">Quản lý</div>
+                        </div>
+                        <div class="holland-type conventional">
+                            <div class="holland-type-icon">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <div class="holland-type-name">Conventional</div>
+                            <div class="holland-type-desc">Nghiệp vụ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-section" id="progress-section" style="display: none;">
+                <div class="progress-header">
+                    <span class="progress-info" id="progress-info">Câu 1/30</span>
+                    <span class="progress-time" id="progress-time">
+                        <i class="fa-solid fa-clock"></i> ~5 phút còn lại
+                    </span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Questions Section -->
+            <div class="question-section" id="question-section">
+                <div id="question-container">
+                    <!-- Question loaded here -->
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="result-section" id="result-section">
+                <div id="result-content">
+                    <!-- Results loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/config.local.js" onerror="console.log('Running in production mode')"></script>
+    <script src="js/holland.js"></script>
+</body>
+
+</html>

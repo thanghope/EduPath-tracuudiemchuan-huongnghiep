@@ -1,0 +1,42 @@
+{
+    "regions": {
+        "KV1": {
+            "name": "Khu vực 1",
+            "description": "Các xã đặc biệt khó khăn, xã biên giới, hải đảo",
+            "score": 0.75
+        },
+        "KV2-NT": {
+            "name": "Khu vực 2 nông thôn",
+            "description": "Các địa phương nông thôn",
+            "score": 0.5
+        },
+        "KV2": {
+            "name": "Khu vực 2",
+            "description": "Thị xã, thành phố thuộc tỉnh, quận ngoại thành",
+            "score": 0.25
+        },
+        "KV3": {
+            "name": "Khu vực 3",
+            "description": "Các quận nội thành của TP trực thuộc TW",
+            "score": 0
+        }
+    },
+    "objects": {
+        "UT1": {
+            "name": "Đối tượng ưu tiên 1",
+            "description": "Con thương binh, liệt sĩ, người dân tộc thiểu số...",
+            "score": 2.0
+        },
+        "UT2": {
+            "name": "Đối tượng ưu tiên 2",
+            "description": "Con của người hoạt động cách mạng, con Anh hùng...",
+            "score": 1.0
+        },
+        "NONE": {
+            "name": "Không ưu tiên",
+            "description": "Không thuộc diện ưu tiên",
+            "score": 0
+        }
+    },
+    "exam_date_2026": "2026-06-26"
+}

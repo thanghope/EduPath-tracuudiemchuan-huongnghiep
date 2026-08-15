@@ -1,0 +1,733 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "text": "Tôi thích làm việc với máy móc, dụng cụ, công cụ kỹ thuật.",
+            "type": "R"
+        },
+        {
+            "id": 2,
+            "text": "Tôi thích tự tay sửa chữa đồ vật trong nhà.",
+            "type": "R"
+        },
+        {
+            "id": 3,
+            "text": "Tôi thích các hoạt động ngoài trời như làm vườn, cắm trại.",
+            "type": "R"
+        },
+        {
+            "id": 4,
+            "text": "Tôi thích làm việc với động vật hoặc thực vật.",
+            "type": "R"
+        },
+        {
+            "id": 5,
+            "text": "Tôi thích các công việc đòi hỏi sức khỏe và sự khéo léo.",
+            "type": "R"
+        },
+        {
+            "id": 6,
+            "text": "Tôi thích giải quyết các bài toán khó, câu đố logic.",
+            "type": "I"
+        },
+        {
+            "id": 7,
+            "text": "Tôi thích tìm hiểu nguyên nhân của các hiện tượng tự nhiên.",
+            "type": "I"
+        },
+        {
+            "id": 8,
+            "text": "Tôi thích đọc các tài liệu khoa học, nghiên cứu.",
+            "type": "I"
+        },
+        {
+            "id": 9,
+            "text": "Tôi thích phân tích dữ liệu và rút ra kết luận.",
+            "type": "I"
+        },
+        {
+            "id": 10,
+            "text": "Tôi thích thử nghiệm, khám phá những điều mới lạ.",
+            "type": "I"
+        },
+        {
+            "id": 11,
+            "text": "Tôi thích vẽ, sáng tác nhạc, hoặc viết văn.",
+            "type": "A"
+        },
+        {
+            "id": 12,
+            "text": "Tôi thích thiết kế đồ họa, trang trí nội thất.",
+            "type": "A"
+        },
+        {
+            "id": 13,
+            "text": "Tôi thích tham gia các hoạt động nghệ thuật như kịch, múa.",
+            "type": "A"
+        },
+        {
+            "id": 14,
+            "text": "Tôi thường có nhiều ý tưởng sáng tạo độc đáo.",
+            "type": "A"
+        },
+        {
+            "id": 15,
+            "text": "Tôi thích làm việc trong môi trường tự do, không bị gò bó.",
+            "type": "A"
+        },
+        {
+            "id": 16,
+            "text": "Tôi thích giúp đỡ người khác giải quyết vấn đề cá nhân.",
+            "type": "S"
+        },
+        {
+            "id": 17,
+            "text": "Tôi thích tham gia các hoạt động tình nguyện, cộng đồng.",
+            "type": "S"
+        },
+        {
+            "id": 18,
+            "text": "Tôi thích làm việc trong nhóm và giao tiếp với nhiều người.",
+            "type": "S"
+        },
+        {
+            "id": 19,
+            "text": "Tôi thích dạy học hoặc hướng dẫn người khác.",
+            "type": "S"
+        },
+        {
+            "id": 20,
+            "text": "Tôi quan tâm đến sức khỏe và phúc lợi của mọi người.",
+            "type": "S"
+        },
+        {
+            "id": 21,
+            "text": "Tôi thích lãnh đạo, quản lý một nhóm người.",
+            "type": "E"
+        },
+        {
+            "id": 22,
+            "text": "Tôi thích thuyết phục người khác theo ý kiến của mình.",
+            "type": "E"
+        },
+        {
+            "id": 23,
+            "text": "Tôi thích khởi nghiệp, kinh doanh.",
+            "type": "E"
+        },
+        {
+            "id": 24,
+            "text": "Tôi thích đặt mục tiêu và tìm cách đạt được.",
+            "type": "E"
+        },
+        {
+            "id": 25,
+            "text": "Tôi thích cạnh tranh và thắng cuộc.",
+            "type": "E"
+        },
+        {
+            "id": 26,
+            "text": "Tôi thích làm việc với số liệu, bảng biểu.",
+            "type": "C"
+        },
+        {
+            "id": 27,
+            "text": "Tôi thích công việc có quy trình rõ ràng, tuân thủ quy tắc.",
+            "type": "C"
+        },
+        {
+            "id": 28,
+            "text": "Tôi cẩn thận, tỉ mỉ trong công việc.",
+            "type": "C"
+        },
+        {
+            "id": 29,
+            "text": "Tôi thích sắp xếp, phân loại và lưu trữ tài liệu.",
+            "type": "C"
+        },
+        {
+            "id": 30,
+            "text": "Tôi thích làm việc trong văn phòng, môi trường ổn định.",
+            "type": "C"
+        }
+    ],
+    "types": {
+        "R": {
+            "name": "Realistic (Thực tế)",
+            "shortName": "Thực tế",
+            "icon": "🔧",
+            "color": "#22c55e",
+            "description": "Bạn là người thực tế, kiên nhẫn, thích làm việc với đồ vật, máy móc và thiên nhiên. Bạn có xu hướng thích các công việc đòi hỏi sự khéo léo và thể chất.",
+            "strengths": [
+                "Khéo léo tay chân",
+                "Kiên nhẫn",
+                "Thực tế",
+                "Độc lập"
+            ],
+            "careers": [
+                {
+                    "name": "Kỹ sư Cơ khí",
+                    "salary": "15-35 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Thiết kế, chế tạo và bảo trì máy móc, thiết bị cơ khí"
+                },
+                {
+                    "name": "Kỹ sư Điện",
+                    "salary": "12-30 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Thiết kế và vận hành hệ thống điện công nghiệp"
+                },
+                {
+                    "name": "Kỹ sư Xây dựng",
+                    "salary": "15-40 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Thiết kế, giám sát và quản lý các công trình xây dựng"
+                },
+                {
+                    "name": "Kỹ thuật viên Ô tô",
+                    "salary": "10-25 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Sửa chữa, bảo dưỡng và nâng cấp xe ô tô"
+                },
+                {
+                    "name": "Kỹ sư Nông nghiệp",
+                    "salary": "12-25 triệu/tháng",
+                    "demand": "Trung bình",
+                    "description": "Nghiên cứu và ứng dụng công nghệ trong nông nghiệp"
+                }
+            ],
+            "majors": [
+                {
+                    "name": "Kỹ thuật Cơ khí",
+                    "universities": [
+                        "Bách Khoa Hà Nội",
+                        "Bách Khoa TP.HCM",
+                        "ĐH Công nghệ GTVT"
+                    ],
+                    "scoreRange": "24-27"
+                },
+                {
+                    "name": "Kỹ thuật Điện",
+                    "universities": [
+                        "Bách Khoa Hà Nội",
+                        "Bách Khoa TP.HCM",
+                        "ĐH Điện lực"
+                    ],
+                    "scoreRange": "25-28"
+                },
+                {
+                    "name": "Kỹ thuật Xây dựng",
+                    "universities": [
+                        "ĐH Xây dựng",
+                        "Bách Khoa Hà Nội",
+                        "Bách Khoa TP.HCM"
+                    ],
+                    "scoreRange": "23-26"
+                },
+                {
+                    "name": "Công nghệ Kỹ thuật Ô tô",
+                    "universities": [
+                        "Bách Khoa Hà Nội",
+                        "ĐH GTVT",
+                        "ĐH Công nghiệp"
+                    ],
+                    "scoreRange": "22-25"
+                },
+                {
+                    "name": "Khoa học Cây trồng",
+                    "universities": [
+                        "Học viện Nông nghiệp VN",
+                        "ĐH Nông Lâm TP.HCM"
+                    ],
+                    "scoreRange": "20-24"
+                }
+            ],
+            "blocks": [
+                "A00",
+                "A01",
+                "B00"
+            ]
+        },
+        "I": {
+            "name": "Investigative (Nghiên cứu)",
+            "shortName": "Nghiên cứu",
+            "icon": "🔬",
+            "color": "#3b82f6",
+            "description": "Bạn có tư duy logic, phân tích tốt và thích tìm hiểu, khám phá. Bạn thường đặt câu hỏi và tìm kiếm câu trả lời cho các vấn đề phức tạp.",
+            "strengths": [
+                "Tư duy logic",
+                "Phân tích",
+                "Tò mò",
+                "Độc lập suy nghĩ"
+            ],
+            "careers": [
+                {
+                    "name": "Bác sĩ",
+                    "salary": "20-80 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Khám, chẩn đoán và điều trị bệnh cho bệnh nhân"
+                },
+                {
+                    "name": "Kỹ sư Phần mềm",
+                    "salary": "20-60 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Phát triển ứng dụng, phần mềm và giải pháp công nghệ"
+                },
+                {
+                    "name": "Nhà khoa học Dữ liệu",
+                    "salary": "25-70 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Phân tích dữ liệu lớn và xây dựng mô hình AI/ML"
+                },
+                {
+                    "name": "Dược sĩ",
+                    "salary": "15-40 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Nghiên cứu, bào chế và tư vấn sử dụng thuốc"
+                },
+                {
+                    "name": "Nhà nghiên cứu",
+                    "salary": "15-35 triệu/tháng",
+                    "demand": "Trung bình",
+                    "description": "Nghiên cứu khoa học tại viện nghiên cứu hoặc trường đại học"
+                }
+            ],
+            "majors": [
+                {
+                    "name": "Y khoa",
+                    "universities": [
+                        "ĐH Y Hà Nội",
+                        "ĐH Y Dược TP.HCM",
+                        "ĐH Y Dược Huế"
+                    ],
+                    "scoreRange": "27-29"
+                },
+                {
+                    "name": "Khoa học Máy tính",
+                    "universities": [
+                        "Bách Khoa Hà Nội",
+                        "ĐH Công nghệ ĐHQGHN",
+                        "ĐH KHTN TP.HCM"
+                    ],
+                    "scoreRange": "27-29"
+                },
+                {
+                    "name": "Dược học",
+                    "universities": [
+                        "ĐH Dược Hà Nội",
+                        "ĐH Y Dược TP.HCM",
+                        "ĐH Y Dược Huế"
+                    ],
+                    "scoreRange": "25-28"
+                },
+                {
+                    "name": "Công nghệ Thông tin",
+                    "universities": [
+                        "Bách Khoa Hà Nội",
+                        "ĐH Công nghệ ĐHQGHN",
+                        "FPT"
+                    ],
+                    "scoreRange": "26-28"
+                },
+                {
+                    "name": "Trí tuệ Nhân tạo",
+                    "universities": [
+                        "ĐH Công nghệ ĐHQGHN",
+                        "ĐH CNTT ĐHQG TP.HCM",
+                        "VinUni"
+                    ],
+                    "scoreRange": "27-29"
+                }
+            ],
+            "blocks": [
+                "A00",
+                "A01",
+                "B00"
+            ]
+        },
+        "A": {
+            "name": "Artistic (Nghệ thuật)",
+            "shortName": "Nghệ thuật",
+            "icon": "🎨",
+            "color": "#a855f7",
+            "description": "Bạn có trí tưởng tượng phong phú, sáng tạo và thích tự do thể hiện bản thân. Bạn không thích sự gò bó và thích các công việc đòi hỏi sự độc đáo.",
+            "strengths": [
+                "Sáng tạo",
+                "Tưởng tượng",
+                "Độc lập",
+                "Nhạy cảm"
+            ],
+            "careers": [
+                {
+                    "name": "Thiết kế Đồ họa",
+                    "salary": "12-35 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Thiết kế logo, poster, branding và ấn phẩm truyền thông"
+                },
+                {
+                    "name": "Kiến trúc sư",
+                    "salary": "18-50 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Thiết kế công trình, nhà ở và không gian sống"
+                },
+                {
+                    "name": "Nhà báo / Content Creator",
+                    "salary": "10-40 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Viết bài, sản xuất nội dung cho báo chí và mạng xã hội"
+                },
+                {
+                    "name": "Đạo diễn / Biên kịch",
+                    "salary": "15-80 triệu/tháng",
+                    "demand": "Trung bình",
+                    "description": "Sáng tạo và sản xuất phim, video, chương trình truyền hình"
+                },
+                {
+                    "name": "UX/UI Designer",
+                    "salary": "18-50 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Thiết kế trải nghiệm và giao diện người dùng cho app/web"
+                }
+            ],
+            "majors": [
+                {
+                    "name": "Thiết kế Đồ họa",
+                    "universities": [
+                        "ĐH Mỹ thuật Công nghiệp",
+                        "ĐH FPT",
+                        "ĐH Kiến trúc HN"
+                    ],
+                    "scoreRange": "20-25"
+                },
+                {
+                    "name": "Kiến trúc",
+                    "universities": [
+                        "ĐH Kiến trúc Hà Nội",
+                        "ĐH Kiến trúc TP.HCM",
+                        "Bách Khoa HN"
+                    ],
+                    "scoreRange": "24-27"
+                },
+                {
+                    "name": "Báo chí - Truyền thông",
+                    "universities": [
+                        "Học viện Báo chí Tuyên truyền",
+                        "ĐH KHXH&NV",
+                        "ĐH FPT"
+                    ],
+                    "scoreRange": "24-27"
+                },
+                {
+                    "name": "Điện ảnh - Truyền hình",
+                    "universities": [
+                        "ĐH Sân khấu Điện ảnh",
+                        "ĐH KHXH&NV"
+                    ],
+                    "scoreRange": "22-26"
+                },
+                {
+                    "name": "Thiết kế Nội thất",
+                    "universities": [
+                        "ĐH Kiến trúc Hà Nội",
+                        "ĐH Mỹ thuật Công nghiệp"
+                    ],
+                    "scoreRange": "22-25"
+                }
+            ],
+            "blocks": [
+                "D01",
+                "H00",
+                "V00",
+                "N00"
+            ]
+        },
+        "S": {
+            "name": "Social (Xã hội)",
+            "shortName": "Xã hội",
+            "icon": "🤝",
+            "color": "#f59e0b",
+            "description": "Bạn thân thiện, hòa đồng và thích giúp đỡ người khác. Bạn có kỹ năng giao tiếp tốt và quan tâm đến phúc lợi cộng đồng.",
+            "strengths": [
+                "Giao tiếp",
+                "Đồng cảm",
+                "Kiên nhẫn",
+                "Hợp tác"
+            ],
+            "careers": [
+                {
+                    "name": "Giáo viên / Giảng viên",
+                    "salary": "10-30 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Giảng dạy, truyền đạt kiến thức cho học sinh, sinh viên"
+                },
+                {
+                    "name": "Điều dưỡng",
+                    "salary": "10-25 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Chăm sóc sức khỏe và hỗ trợ điều trị cho bệnh nhân"
+                },
+                {
+                    "name": "Chuyên viên Nhân sự (HR)",
+                    "salary": "12-35 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Tuyển dụng, đào tạo và quản lý nhân viên trong doanh nghiệp"
+                },
+                {
+                    "name": "Nhà Tâm lý",
+                    "salary": "15-40 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Tư vấn, trị liệu tâm lý cho cá nhân và tổ chức"
+                },
+                {
+                    "name": "Nhân viên Công tác Xã hội",
+                    "salary": "8-20 triệu/tháng",
+                    "demand": "Trung bình",
+                    "description": "Hỗ trợ các nhóm yếu thế trong xã hội"
+                }
+            ],
+            "majors": [
+                {
+                    "name": "Sư phạm",
+                    "universities": [
+                        "ĐH Sư phạm Hà Nội",
+                        "ĐH Sư phạm TP.HCM",
+                        "ĐH Giáo dục ĐHQGHN"
+                    ],
+                    "scoreRange": "25-28"
+                },
+                {
+                    "name": "Điều dưỡng",
+                    "universities": [
+                        "ĐH Y Hà Nội",
+                        "ĐH Y Dược TP.HCM",
+                        "ĐH Điều dưỡng Nam Định"
+                    ],
+                    "scoreRange": "22-25"
+                },
+                {
+                    "name": "Tâm lý học",
+                    "universities": [
+                        "ĐH KHXH&NV Hà Nội",
+                        "ĐH KHXH&NV TP.HCM",
+                        "ĐH Sư phạm HN"
+                    ],
+                    "scoreRange": "24-27"
+                },
+                {
+                    "name": "Công tác Xã hội",
+                    "universities": [
+                        "ĐH Lao động Xã hội",
+                        "ĐH KHXH&NV"
+                    ],
+                    "scoreRange": "22-25"
+                },
+                {
+                    "name": "Quản trị Nhân sự",
+                    "universities": [
+                        "ĐH Kinh tế Quốc dân",
+                        "ĐH Thương mại",
+                        "ĐH Lao động Xã hội"
+                    ],
+                    "scoreRange": "24-27"
+                }
+            ],
+            "blocks": [
+                "D01",
+                "C00",
+                "A01"
+            ]
+        },
+        "E": {
+            "name": "Enterprising (Quản lý)",
+            "shortName": "Quản lý",
+            "icon": "💼",
+            "color": "#ef4444",
+            "description": "Bạn tự tin, năng động và có khả năng lãnh đạo. Bạn thích thử thách, cạnh tranh và có xu hướng thích điều hành công việc.",
+            "strengths": [
+                "Lãnh đạo",
+                "Thuyết phục",
+                "Quyết đoán",
+                "Năng động"
+            ],
+            "careers": [
+                {
+                    "name": "Quản lý Doanh nghiệp",
+                    "salary": "25-80 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Điều hành và quản lý hoạt động kinh doanh của công ty"
+                },
+                {
+                    "name": "Chuyên viên Marketing",
+                    "salary": "15-40 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Xây dựng chiến lược và triển khai các chiến dịch marketing"
+                },
+                {
+                    "name": "Luật sư",
+                    "salary": "20-100 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Tư vấn pháp luật và đại diện cho khách hàng trước pháp luật"
+                },
+                {
+                    "name": "Chuyên viên Bán hàng",
+                    "salary": "12-50 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Tìm kiếm khách hàng và bán sản phẩm, dịch vụ"
+                },
+                {
+                    "name": "Doanh nhân / Startup",
+                    "salary": "Không giới hạn",
+                    "demand": "Cao",
+                    "description": "Khởi nghiệp và xây dựng doanh nghiệp riêng"
+                }
+            ],
+            "majors": [
+                {
+                    "name": "Quản trị Kinh doanh",
+                    "universities": [
+                        "ĐH Kinh tế Quốc dân",
+                        "ĐH Ngoại thương",
+                        "UEH"
+                    ],
+                    "scoreRange": "26-28"
+                },
+                {
+                    "name": "Marketing",
+                    "universities": [
+                        "ĐH Kinh tế Quốc dân",
+                        "UEH",
+                        "ĐH Thương mại"
+                    ],
+                    "scoreRange": "26-28"
+                },
+                {
+                    "name": "Luật",
+                    "universities": [
+                        "ĐH Luật Hà Nội",
+                        "Học viện Tư pháp",
+                        "ĐH Luật TP.HCM"
+                    ],
+                    "scoreRange": "26-28"
+                },
+                {
+                    "name": "Kinh doanh Quốc tế",
+                    "universities": [
+                        "ĐH Ngoại thương",
+                        "ĐH Kinh tế Quốc dân",
+                        "UEH"
+                    ],
+                    "scoreRange": "27-29"
+                },
+                {
+                    "name": "Tài chính",
+                    "universities": [
+                        "Học viện Tài chính",
+                        "Học viện Ngân hàng",
+                        "ĐH Kinh tế Quốc dân"
+                    ],
+                    "scoreRange": "26-28"
+                }
+            ],
+            "blocks": [
+                "A00",
+                "A01",
+                "D01"
+            ]
+        },
+        "C": {
+            "name": "Conventional (Nghiệp vụ)",
+            "shortName": "Nghiệp vụ",
+            "icon": "📊",
+            "color": "#06b6d4",
+            "description": "Bạn cẩn thận, tỉ mỉ và thích làm việc theo quy trình. Bạn giỏi trong việc tổ chức, lưu trữ và xử lý thông tin.",
+            "strengths": [
+                "Tỉ mỉ",
+                "Chính xác",
+                "Có tổ chức",
+                "Đáng tin cậy"
+            ],
+            "careers": [
+                {
+                    "name": "Kế toán viên",
+                    "salary": "12-30 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Quản lý sổ sách, báo cáo tài chính cho doanh nghiệp"
+                },
+                {
+                    "name": "Kiểm toán viên",
+                    "salary": "15-50 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Kiểm tra và đánh giá tính chính xác của báo cáo tài chính"
+                },
+                {
+                    "name": "Chuyên viên Ngân hàng",
+                    "salary": "12-35 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Xử lý giao dịch và tư vấn sản phẩm tài chính cho khách hàng"
+                },
+                {
+                    "name": "Thư ký / Trợ lý",
+                    "salary": "10-25 triệu/tháng",
+                    "demand": "Cao",
+                    "description": "Hỗ trợ lãnh đạo trong công việc hành chính, văn phòng"
+                },
+                {
+                    "name": "Chuyên viên Phân tích Dữ liệu",
+                    "salary": "18-45 triệu/tháng",
+                    "demand": "Rất cao",
+                    "description": "Thu thập, xử lý và phân tích dữ liệu kinh doanh"
+                }
+            ],
+            "majors": [
+                {
+                    "name": "Kế toán",
+                    "universities": [
+                        "Học viện Tài chính",
+                        "ĐH Kinh tế Quốc dân",
+                        "ĐH Thương mại"
+                    ],
+                    "scoreRange": "25-27"
+                },
+                {
+                    "name": "Kiểm toán",
+                    "universities": [
+                        "Học viện Tài chính",
+                        "Học viện Ngân hàng",
+                        "UEH"
+                    ],
+                    "scoreRange": "26-28"
+                },
+                {
+                    "name": "Tài chính - Ngân hàng",
+                    "universities": [
+                        "Học viện Ngân hàng",
+                        "Học viện Tài chính",
+                        "ĐH Kinh tế Quốc dân"
+                    ],
+                    "scoreRange": "26-28"
+                },
+                {
+                    "name": "Quản trị Văn phòng",
+                    "universities": [
+                        "ĐH Nội vụ",
+                        "ĐH KHXH&NV"
+                    ],
+                    "scoreRange": "22-25"
+                },
+                {
+                    "name": "Thống kê Kinh tế",
+                    "universities": [
+                        "ĐH Kinh tế Quốc dân",
+                        "Học viện Tài chính"
+                    ],
+                    "scoreRange": "25-27"
+                }
+            ],
+            "blocks": [
+                "A00",
+                "A01",
+                "D01"
+            ]
+        }
+    }
+}

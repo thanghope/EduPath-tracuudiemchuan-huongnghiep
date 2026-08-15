@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Environment variables (QUAN TRỌNG - không push API key)
+.env
+.env.local
+.env.production
+
+# Local config with API key
+js/config.local.js
+
+# Vercel
+.vercel/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+
+# LaTeX auxiliary files
+docs/*.aux
+docs/*.log
+docs/*.out
+docs/*.toc
+docs/*.synctex.gz
+docs/*.fdb_latexmk
+docs/*.fls
+.vercel
+.env*.local

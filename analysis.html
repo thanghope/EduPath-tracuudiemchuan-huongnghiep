@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Phân tích điểm thi thử và đánh giá khả năng đậu đại học - EduPath">
+    <title>Phân tích Điểm Thi Thử - EduPath</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/analysis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ffffff;
+        }
+
+        .logo-text {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">Edu<span>Path</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                <li><a href="lookup.html" class="nav-link">Điểm chuẩn</a></li>
+                <li><a href="analysis.html" class="nav-link active">Phân tích</a></li>
+                <li><a href="personalize.html" class="nav-link">Cá nhân hóa</a></li>
+                <li><a href="career.html" class="nav-link">Hướng nghiệp</a></li>
+            </ul>
+            <a href="chat.html" class="btn btn-gold">
+                <i class="fa-solid fa-robot"></i> Hỏi đáp AI
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="analysis-main">
+        <div class="container">
+            <!-- Page Title -->
+            <div class="page-header">
+                <h1><i class="fa-solid fa-chart-line"></i> Phân tích Điểm Thi Thử</h1>
+                <p>Nhập điểm thi thử để đánh giá khả năng đậu và nhận gợi ý cải thiện</p>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <!-- Step 1: Chọn mục tiêu -->
+                <div class="input-card">
+                    <div class="card-header">
+                        <span class="step-badge">1</span>
+                        <h2>Chọn mục tiêu</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="school-select">Trường đại học</label>
+                                <select id="school-select">
+                                    <option value="">-- Chọn trường --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="major-select">Ngành học</label>
+                                <select id="major-select" disabled>
+                                    <option value="">-- Chọn ngành --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="block-select">Khối thi</label>
+                                <select id="block-select" disabled>
+                                    <option value="">-- Chọn khối --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="target-info" id="target-info" style="display: none;">
+                            <div class="target-score">
+                                <span class="label">Điểm chuẩn 2025:</span>
+                                <span class="value" id="target-score-value">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Nhập điểm -->
+                <div class="input-card">
+                    <div class="card-header">
+                        <span class="step-badge">2</span>
+                        <h2>Nhập điểm thi thử</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="score-inputs" id="score-inputs">
+                            <p class="placeholder-text">Vui lòng chọn trường và ngành trước</p>
+                        </div>
+
+                        <div class="priority-section">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="region-select">Khu vực ưu tiên</label>
+                                    <select id="region-select">
+                                        <option value="KV3">Khu vực 3 (+0 điểm)</option>
+                                        <option value="KV2">Khu vực 2 (+0.25 điểm)</option>
+                                        <option value="KV2-NT">Khu vực 2 NT (+0.5 điểm)</option>
+                                        <option value="KV1">Khu vực 1 (+0.75 điểm)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="object-select">Đối tượng ưu tiên</label>
+                                    <select id="object-select">
+                                        <option value="NONE">Không ưu tiên (+0 điểm)</option>
+                                        <option value="UT2">Ưu tiên 2 (+1.0 điểm)</option>
+                                        <option value="UT1">Ưu tiên 1 (+2.0 điểm)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="score-summary" id="score-summary" style="display: none;">
+                            <div class="summary-item">
+                                <span class="label">Tổng điểm 3 môn:</span>
+                                <span class="value" id="raw-score">--</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Điểm ưu tiên:</span>
+                                <span class="value" id="priority-score">+0</span>
+                            </div>
+                            <div class="summary-item total">
+                                <span class="label">Điểm xét tuyển:</span>
+                                <span class="value" id="total-score">--</span>
+                            </div>
+                        </div>
+
+                        <button class="analyze-btn" id="analyze-btn" disabled>
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            Phân tích ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="results-section" style="display: none;">
+                <!-- Overview Cards -->
+                <div class="overview-grid">
+                    <div class="overview-card probability-card" id="probability-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Khả năng đậu</h3>
+                            <div class="probability-value">
+                                <span class="percent" id="probability-percent">--%</span>
+                                <span class="level" id="probability-level">--</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="probability-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overview-card gap-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-arrows-up-down"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Khoảng cách</h3>
+                            <div class="gap-value" id="gap-value">-- điểm</div>
+                            <div class="gap-description" id="gap-description">--</div>
+                        </div>
+                    </div>
+
+                    <div class="overview-card days-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Còn lại</h3>
+                            <div class="days-value" id="days-value">-- ngày</div>
+                            <div class="days-description">đến kỳ thi THPT 2026</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subject Analysis -->
+                <div class="result-card">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-chart-bar"></i> Phân tích từng môn</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="subjects-analysis" id="subjects-analysis">
+                            <!-- Generated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alternative Schools -->
+                <div class="result-card">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-school"></i> Trường thay thế phù hợp</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="alternatives-list" id="alternatives-list">
+                            <!-- Generated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Study Roadmap -->
+                <div class="result-card">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-route"></i> Lộ trình ôn tập đề xuất</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="roadmap" id="roadmap">
+                            <!-- Generated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="result-actions">
+                    <button class="action-btn secondary" id="reset-btn">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Phân tích lại
+                    </button>
+                    <button class="action-btn primary" id="save-btn">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Lưu kết quả
+                    </button>
+                    <button class="action-btn accent" id="personalize-btn"
+                        onclick="window.location.href='personalize.html'">
+                        <i class="fa-solid fa-sparkles"></i>
+                        Xem lộ trình cá nhân hóa
+                    </button>
+                    <button class="action-btn primary" id="ask-ai-btn">
+                        <i class="fa-solid fa-robot"></i>
+                        Hỏi AI tư vấn
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 EduPath - Hệ thống Tư vấn Tuyển sinh Thông minh</p>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/config.local.js" onerror="console.log('Running in production mode')"></script>
+    <script src="js/analysis.js"></script>
+</body>
+
+</html>

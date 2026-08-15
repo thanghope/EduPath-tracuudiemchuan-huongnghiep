@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduPath AI - Trợ lý tư vấn tuyển sinh và hướng nghiệp thông minh">
+    <title>EduPath AI - Trợ lý Hướng nghiệp</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body class="chat-page">
+    <!-- Minimal Header -->
+    <header class="chat-header">
+        <a href="index.html" class="chat-logo">
+            <div class="logo-mark">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <span class="logo-name">EduPath</span>
+        </a>
+
+        <nav class="chat-nav">
+            <a href="lookup.html" class="nav-pill">
+                <i class="fa-solid fa-search"></i>
+                <span>Điểm chuẩn</span>
+            </a>
+            <a href="analysis.html" class="nav-pill">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Phân tích</span>
+            </a>
+            <a href="personalize.html" class="nav-pill">
+                <i class="fa-solid fa-sparkles"></i>
+                <span>Cá nhân hóa</span>
+            </a>
+            <a href="career.html" class="nav-pill">
+                <i class="fa-solid fa-compass"></i>
+                <span>Hướng nghiệp</span>
+            </a>
+        </nav>
+
+        <button id="clear-chat" class="header-action" title="Xóa lịch sử">
+            <i class="fa-solid fa-rotate-right"></i>
+        </button>
+    </header>
+
+    <!-- Main Chat Container -->
+    <main class="chat-main">
+        <!-- Context Bar (hiển thị khi có context) -->
+        <div id="context-bar" class="context-bar">
+            <div id="context-holland" class="context-chip" style="display: none;">
+                <i class="fa-solid fa-brain"></i>
+                <span id="holland-text">Holland: Chưa có</span>
+                <button onclick="clearHollandContext()" class="chip-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="context-major" class="context-chip" style="display: none;">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span id="major-text">Ngành: Chưa chọn</span>
+                <button onclick="clearMajorContext()" class="chip-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Messages Container -->
+        <div class="chat-scroll">
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will be rendered here -->
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-wrapper">
+            <form id="chat-form" class="chat-form">
+                <div class="input-container">
+                    <textarea id="chat-input" class="chat-input"
+                        placeholder="Hỏi về điểm chuẩn, ngành học, nghề nghiệp..." rows="1"
+                        autocomplete="off"></textarea>
+                    <button type="submit" class="send-btn" id="send-btn">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+                <p class="input-hint">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Dữ liệu điểm chuẩn 2025 từ 80+ trường đại học
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/config.local.js" onerror="console.log('Running in production mode')"></script>
+    <script src="js/chat.js"></script>
+    <script>
+        // Auto-resize textarea
+        const textarea = document.getElementById('chat-input');
+        textarea.addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 200) + 'px';
+        });
+
+        // Submit on Enter (Shift+Enter for new line)
+        textarea.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                document.getElementById('chat-form').dispatchEvent(new Event('submit'));
+            }
+        });
+
+        // Global function for quick actions
+        function askQuestion(question) {
+            if (window.eduPathChat && !window.eduPathChat.isLoading) {
+                window.eduPathChat.sendMessage(question);
+            }
+        }
+    </script>
+</body>
+
+</html>
