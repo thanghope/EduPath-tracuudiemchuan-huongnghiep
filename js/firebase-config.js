@@ -1,31 +1,21 @@
-// Firebase configuration for EduPath
-// Import Firebase modules (loaded via CDN in HTML)
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyDNl53Vet3RQMZVJPOLSWMlD0eXp9Aj2qU",
-    authDomain: "edupath-2f44b.firebaseapp.com",
-    projectId: "edupath-2f44b",
-    storageBucket: "edupath-2f44b.firebasestorage.app",
-    messagingSenderId: "237358592223",
-    appId: "1:237358592223:web:3e151189854de96fdf796a",
-    measurementId: "G-DKFSBPK0TR"
+  apiKey: "AIzaSyB-PO1Q-ySiI5-TttJ3cmOc4rPhnjPtsM4",
+  authDomain: "edupath-327c3.firebaseapp.com",
+  projectId: "edupath-327c3",
+  storageBucket: "edupath-327c3.firebasestorage.app",
+  messagingSenderId: "824523263230",
+  appId: "1:824523263230:web:c4d7bc4f11e6a24e21e9af",
+  measurementId: "G-DEL1MF35ES"
 };
 
 // Initialize Firebase
-let app, db;
-
-function initFirebase() {
-    if (typeof firebase !== 'undefined') {
-        app = firebase.initializeApp(firebaseConfig);
-        db = firebase.firestore();
-        console.log('Firebase initialized successfully');
-        return true;
-    }
-    console.error('Firebase SDK not loaded');
-    return false;
-}
-
-// Export for use in other files
-window.firebaseConfig = firebaseConfig;
-window.initFirebase = initFirebase;
-window.getFirestore = () => db;
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
