@@ -7,7 +7,7 @@ module.exports = async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    // Lấy API key từ environment variable của Vercel
+    // Lấy API key từ environment variable 
     const GROQ_API_KEY = process.env.GROQ_API_KEY;
 
     if (!GROQ_API_KEY) {
