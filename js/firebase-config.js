@@ -1,4 +1,6 @@
-// Cấu hình Firebase của bạn
+// Firebase configuration for EduPath
+// Import Firebase modules (loaded via CDN in HTML)
+
 const firebaseConfig = {
     apiKey: "AizaSyB-PO1q-ySiI5-TttJ3cmOc4rPhnjPtsM4",
     authDomain: "edupath-327c3.firebaseapp.com",
@@ -9,6 +11,21 @@ const firebaseConfig = {
     measurementId: "G-DEL1MF35ES"
 };
 
-// Khởi tạo Firebase trực tiếp
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+// Initialize Firebase
+let app, db;
+
+function initFirebase() {
+    if (typeof firebase !== 'undefined') {
+        app = firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
+        console.log('Firebase initialized successfully');
+        return true;
+    }
+    console.error('Firebase SDK not loaded');
+    return false;
+}
+
+// Export for use in other files
+window.firebaseConfig = firebaseConfig;
+window.initFirebase = initFirebase;
+window.getFirestore = () => db;
