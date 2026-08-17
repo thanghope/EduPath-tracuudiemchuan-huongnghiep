@@ -2,13 +2,13 @@
 // Import Firebase modules (loaded via CDN in HTML)
 
 const firebaseConfig = {
-    apiKey: "AizaSyB-PO1q-ySiI5-TttJ3cmOc4rPhnjPtsM4",
-    authDomain: "edupath-327c3.firebaseapp.com",
-    projectId: "edupath-327c3",
-    storageBucket: "edupath-327c3.firebasestorage.app",
-    messagingSenderId: "824523263230",
-    appId: "1:824523263230:web:c4d7bc4f11e6a24e21e9af",
-    measurementId: "G-DEL1MF35ES"
+    apiKey: "AIzaSyDNl53Vet3RQMZVJPOLSWMlD0eXp9Aj2qU",
+    authDomain: "edupath-2f44b.firebaseapp.com",
+    projectId: "edupath-2f44b",
+    storageBucket: "edupath-2f44b.firebasestorage.app",
+    messagingSenderId: "237358592223",
+    appId: "1:237358592223:web:3e151189854de96fdf796a",
+    measurementId: "G-DKFSBPK0TR"
 };
 
 // Initialize Firebase
