@@ -329,7 +329,7 @@ class AdminPanel {
         const entry = document.createElement('div');
         entry.className = 'score-entry';
 
-        const blocks = ['A00', 'A01', 'B00', 'B08', 'C00', 'D01', 'D07', 'D14', 'D15', 'H00', 'V00', 'V01', 'M00', 'T00'];
+        const blocks = ['A00', 'A01', 'B00', 'B08', 'C00', 'D01', 'D07', 'D14', 'D15', 'H00', 'V00', 'V01', 'M00', 'T00','X06','X26'];
 
         entry.innerHTML = `
             <div class="form-group">
