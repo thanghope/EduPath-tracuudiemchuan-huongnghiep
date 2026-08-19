@@ -13263,7 +13263,8 @@
         }
       ]
     },
-    [{
+[
+  {
     "code": "HCMUTE",
     "name": "Đại học Sư phạm Kỹ thuật TP.HCM",
     "type": "Công lập",
@@ -13512,6 +13513,628 @@
             "block": "D15",
             "score": 25.5,
             "method": "THPT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "HCMUS",
+    "name": "ĐH Khoa học Tự nhiên - ĐHQG TP.HCM",
+    "type": "Công lập",
+    "location": "TP.HCM",
+    "majors": [
+      {
+        "code": "HCMUS-1",
+        "name": "Khoa học máy tính (Tiên tiến)",
+        "quota": 111,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 28.5,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "A01",
+            "score": 28.5,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-2",
+        "name": "Trí tuệ nhân tạo",
+        "quota": 180,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 27.7,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "A01",
+            "score": 27.7,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-3",
+        "name": "Khoa học dữ liệu",
+        "quota": 144,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 26.85,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "A01",
+            "score": 26.85,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-4",
+        "name": "Công nghệ thông tin",
+        "quota": 158,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 26.75,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "A01",
+            "score": 26.75,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-5",
+        "name": "Kỹ thuật phần mềm",
+        "quota": 222,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 26.5,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "A01",
+            "score": 26.5,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-6",
+        "name": "Hệ thống thông tin",
+        "quota": 102,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 26,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "A01",
+            "score": 26,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-7",
+        "name": "Toán học",
+        "quota": 146,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 25.55,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "A01",
+            "score": 25.55,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-8",
+        "name": "Toán tin",
+        "quota": 147,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 25.8,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "A01",
+            "score": 25.8,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-9",
+        "name": "Hóa học",
+        "quota": 134,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 25.42,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "B00",
+            "score": 25.42,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-10",
+        "name": "Vật lý học",
+        "quota": 194,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 24.5,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "A01",
+            "score": 24.5,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-11",
+        "name": "Sinh học",
+        "quota": 227,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "B00",
+            "score": 24,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "D08",
+            "score": 24,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-12",
+        "name": "Công nghệ sinh học",
+        "quota": 94,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 25,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "B00",
+            "score": 25,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-13",
+        "name": "Địa chất học",
+        "quota": 224,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 21,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "A01",
+            "score": 21,
+            "method": "THPT"
+          }
+        ]
+      },
+      {
+        "code": "HCMUS-14",
+        "name": "Môi trường",
+        "quota": 88,
+        "scores": [
+          {
+            "year": 2024,
+            "block": "A00",
+            "score": 22.5,
+            "method": "THPT"
+          },
+          {
+            "year": 2024,
+            "block": "B00",
+            "score": 22.5,
+            "method": "THPT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "HCMUT",
+    "name": "ĐH Bách Khoa - ĐHQG TP.HCM",
+    "type": "Công lập",
+    "location": "TP.HCM",
+    "majors": [
+      {
+        "code": "HCMUT-1",
+        "name": "Kỹ thuật Bán dẫn",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": 85.8,
+            "blocks": [
+              "A00",
+              "A01"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-2",
+        "name": "Thiết kế Vi mạch",
+        "quota": null,
+        "program": "Tiếng Anh",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": 85.51,
+            "blocks": [
+              "A00",
+              "A01"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-3",
+        "name": "Khoa học Máy tính",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": 85.45,
+            "blocks": [
+              "A00",
+              "A01"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-4",
+        "name": "Kỹ thuật Máy tính",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": 84.98,
+            "blocks": [
+              "A00",
+              "A01"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-5",
+        "name": "Khoa học Dữ liệu",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": 84.97,
+            "blocks": [
+              "A00",
+              "A01"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-6",
+        "name": "Kỹ thuật Cơ điện tử",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": 84.36,
+            "blocks": [
+              "A00",
+              "A01"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-7",
+        "name": "Nhóm ngành Điện - Điện tử",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": 84.29,
+            "blocks": [
+              "A00",
+              "A01"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-8",
+        "name": "Quản lý Logistics & Chuỗi cung ứng",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": null,
+            "blocks": [
+              "A00",
+              "A01",
+              "D01",
+              "D07"
+            ],
+            "score_range": ">80.00"
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-9",
+        "name": "Quản lý Công nghiệp",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": null,
+            "blocks": [
+              "A00",
+              "A01",
+              "D01",
+              "D07"
+            ],
+            "score_range": ">80.00"
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-10",
+        "name": "Vật lý Kỹ thuật / Kỹ thuật Hạt nhân",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": null,
+            "blocks": [
+              "A00",
+              "A01"
+            ],
+            "score_range": ">80.00"
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-11",
+        "name": "Tàu thủy - Hàng không",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": null,
+            "blocks": [
+              "A00",
+              "A01"
+            ],
+            "score_range": ">80.00"
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-12",
+        "name": "Nhóm ngành Hóa - Thực phẩm - Sinh học",
+        "quota": null,
+        "program": "Chuẩn / TA",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": null,
+            "blocks": [
+              "A00",
+              "B00",
+              "D07"
+            ],
+            "score_range": "70 - 79"
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-13",
+        "name": "Kỹ thuật Ô tô / Kỹ thuật Nhiệt",
+        "quota": null,
+        "program": "Chuẩn / TA",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": null,
+            "blocks": [
+              "A00",
+              "A01"
+            ],
+            "score_range": "70 - 79"
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-14",
+        "name": "Kiến trúc / Mỹ thuật Công nghiệp",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": null,
+            "blocks": [
+              "V00",
+              "V01",
+              "H01"
+            ],
+            "score_range": "65 - 75"
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-15",
+        "name": "Địa chất / Địa Kỹ thuật Xây dựng",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": null,
+            "blocks": [
+              "A00",
+              "A01"
+            ],
+            "score_range": "64.37 - 65.60"
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-16",
+        "name": "Chuyên ngành Kinh tế Tuần hoàn",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": 61.43,
+            "blocks": [
+              "A00",
+              "A01",
+              "D01",
+              "D07"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-17",
+        "name": "Nhóm ngành Xây dựng & QLDA",
+        "quota": null,
+        "program": "Chuẩn / TA",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": 68.69,
+            "blocks": [
+              "A00",
+              "A01"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-18",
+        "name": "Bảo dưỡng Công nghiệp",
+        "quota": null,
+        "program": "Chuẩn",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": null,
+            "blocks": [
+              "A00",
+              "A01"
+            ],
+            "score_range": "58 - 65"
+          }
+        ]
+      },
+      {
+        "code": "HCMUT-19",
+        "name": "Kỹ thuật Dầu khí",
+        "quota": null,
+        "program": "Tiếng Anh",
+        "scores": [
+          {
+            "year": 2026,
+            "method": "Tổng hợp",
+            "score": 55.76,
+            "blocks": [
+              "A00",
+              "A01"
+            ]
           }
         ]
       }
