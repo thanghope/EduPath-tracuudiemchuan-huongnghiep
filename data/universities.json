@@ -507,6 +507,330 @@
       ]
     },
     {
+  "code": "HCMUT",
+  "name": "Đại học Bách khoa - Đại học Quốc gia TP.HCM",
+  "type": "Công lập",
+  "location": "TP. Hồ Chí Minh",
+  "majors": [
+    {
+      "code": "SEMI",
+      "name": "Kỹ thuật Bán dẫn",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": 85.8
+        }
+      ]
+    },
+    {
+      "code": "ICD",
+      "name": "Thiết kế Vi mạch",
+      "program": "Tiếng Anh",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": 85.51
+        }
+      ]
+    },
+    {
+      "code": "CS",
+      "name": "Khoa học Máy tính",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": 85.45
+        }
+      ]
+    },
+    {
+      "code": "CE",
+      "name": "Kỹ thuật Máy tính",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": 84.98
+        }
+      ]
+    },
+    {
+      "code": "DS",
+      "name": "Khoa học Dữ liệu",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": 84.97
+        }
+      ]
+    },
+    {
+      "code": "ME",
+      "name": "Kỹ thuật Cơ điện tử",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": 84.36
+        }
+      ]
+    },
+    {
+      "code": "EE-ET-AUTO-ICD",
+      "name": "Nhóm ngành Điện - Điện tử - Viễn thông - Tự động hóa - Thiết kế vi mạch",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": 84.29
+        }
+      ]
+    },
+    {
+      "code": "CS-EN",
+      "name": "Khoa học Máy tính",
+      "program": "Tiếng Anh",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": ">80",
+          "status": "Đang cập nhật"
+        }
+      ]
+    },
+    {
+      "code": "CE-EN",
+      "name": "Kỹ thuật Máy tính",
+      "program": "Tiếng Anh",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": ">80",
+          "status": "Đang cập nhật"
+        }
+      ]
+    },
+    {
+      "code": "LOG",
+      "name": "Quản lý Logistics và Chuỗi cung ứng",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": ">80"
+        }
+      ]
+    },
+    {
+      "code": "IM",
+      "name": "Quản lý Công nghiệp",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": ">80"
+        }
+      ]
+    },
+    {
+      "code": "EP",
+      "name": "Vật lý Kỹ thuật",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": ">80"
+        }
+      ]
+    },
+    {
+      "code": "SHIP-AERO",
+      "name": "Tàu thủy - Hàng không",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": ">80"
+        }
+      ]
+    },
+    {
+      "code": "NUC",
+      "name": "Kỹ thuật Hạt nhân",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": ">80"
+        }
+      ]
+    },
+    {
+      "code": "CHEM-FOOD-BIO",
+      "name": "Nhóm ngành Hóa - Thực phẩm - Sinh học",
+      "program": "Chuẩn / Tiếng Anh",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": "70-79"
+        }
+      ]
+    },
+    {
+      "code": "AUTO",
+      "name": "Kỹ thuật Ô tô",
+      "program": "Chuẩn / Tiếng Anh",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": "70-79"
+        }
+      ]
+    },
+    {
+      "code": "THERMAL",
+      "name": "Kỹ thuật Nhiệt",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": "70-79"
+        }
+      ]
+    },
+    {
+      "code": "ARCH-IND",
+      "name": "Kiến trúc / Mỹ thuật Công nghiệp",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": "65-75"
+        }
+      ]
+    },
+    {
+      "code": "CECO",
+      "name": "Chuyên ngành Kinh tế Tuần hoàn",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": 61.43
+        }
+      ]
+    },
+    {
+      "code": "CIVIL",
+      "name": "Nhóm ngành Xây dựng và Quản lý Dự án Xây dựng",
+      "program": "Chuẩn / Tiếng Anh",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": "58-65"
+        }
+      ]
+    },
+    {
+      "code": "IMT",
+      "name": "Bảo dưỡng Công nghiệp",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": "58-65"
+        }
+      ]
+    },
+    {
+      "code": "OIL-GEO",
+      "name": "Nhóm ngành Dầu khí - Địa chất",
+      "program": "Chuẩn",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": null,
+          "score_range": "55-60"
+        }
+      ]
+    },
+    {
+      "code": "PET",
+      "name": "Kỹ thuật Dầu khí",
+      "program": "Tiếng Anh",
+      "quota": null,
+      "scores": [
+        {
+          "year": 2026,
+          "method": "Xét tuyển tổng hợp",
+          "score": 55.76,
+          "note": "Thấp nhất"
+        }
+      ]
+    }
+  ]
+},
+    {
       "code": "NTH",
       "name": "Đại học Ngoại thương",
       "type": "Công lập",
